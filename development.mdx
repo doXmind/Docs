@@ -1,0 +1,351 @@
+---
+title: 'Development'
+description: 'Learn how to develop with DocMindLLM SDK and APIs'
+---
+
+## Overview
+
+DocMindLLM provides a comprehensive SDK and REST API for developers to integrate intelligent document processing into their applications.
+
+## SDK Installation
+
+Install the DocMindLLM SDK for your preferred language:
+
+<CodeGroup>
+
+```bash JavaScript/TypeScript
+npm install @docmindllm/sdk
+# or
+yarn add @docmindllm/sdk
+```
+
+```bash Python
+pip install docmindllm
+```
+
+```bash Go
+go get github.com/docmindllm/docmindllm-go
+```
+
+```bash Ruby
+gem install docmindllm
+```
+
+</CodeGroup>
+
+## Configuration
+
+### Environment Setup
+
+Create a `.env` file in your project root:
+
+```bash
+DOCMIND_API_KEY=your_api_key_here
+DOCMIND_API_URL=https://api.docmindllm.com/v1
+DOCMIND_WORKSPACE_ID=your_workspace_id
+```
+
+### Initialize the Client
+
+<CodeGroup>
+
+```javascript JavaScript
+import { DocMindLLM } from '@docmindllm/sdk';
+
+const client = new DocMindLLM({
+  apiKey: process.env.DOCMIND_API_KEY,
+  workspace: process.env.DOCMIND_WORKSPACE_ID
+});
+```
+
+```python Python
+from docmindllm import DocMindLLM
+
+client = DocMindLLM(
+    api_key=os.getenv('DOCMIND_API_KEY'),
+    workspace=os.getenv('DOCMIND_WORKSPACE_ID')
+)
+```
+
+```go Go
+import "github.com/docmindllm/docmindllm-go"
+
+client := docmindllm.NewClient(
+    docmindllm.WithAPIKey(os.Getenv("DOCMIND_API_KEY")),
+    docmindllm.WithWorkspace(os.Getenv("DOCMIND_WORKSPACE_ID")),
+)
+```
+
+</CodeGroup>
+
+## Core Concepts
+
+### Documents
+
+Documents are the primary objects in DocMindLLM:
+
+```javascript
+// Create a document
+const doc = await client.documents.create({
+  title: 'Q4 Financial Report',
+  type: 'report',
+  metadata: {
+    department: 'finance',
+    quarter: 'Q4',
+    year: 2024
+  }
+});
+
+// Update document content
+await client.documents.update(doc.id, {
+  content: 'Your document content here...'
+});
+
+// Get document
+const document = await client.documents.get(doc.id);
+```
+
+### AI Operations
+
+Leverage AI capabilities for document enhancement:
+
+```javascript
+// Enhance writing
+const enhanced = await client.ai.enhance({
+  documentId: doc.id,
+  instruction: 'Make this more concise and professional'
+});
+
+// Generate content
+const generated = await client.ai.generate({
+  prompt: 'Write an executive summary for Q4 financial results',
+  context: document.content,
+  maxTokens: 500
+});
+
+// Extract insights
+const insights = await client.ai.analyze({
+  documentId: doc.id,
+  analysisType: 'key-points'
+});
+```
+
+### Templates
+
+Work with document templates:
+
+```javascript
+// List available templates
+const templates = await client.templates.list({
+  type: 'report',
+  category: 'business'
+});
+
+// Create document from template
+const fromTemplate = await client.documents.createFromTemplate({
+  templateId: 'tmpl_financial_report',
+  data: {
+    company: 'Acme Corp',
+    period: 'Q4 2024',
+    revenue: 1500000
+  }
+});
+```
+
+## Advanced Features
+
+### Batch Processing
+
+Process multiple documents efficiently:
+
+```javascript
+const batch = await client.batch.create({
+  operations: [
+    {
+      type: 'enhance',
+      documentIds: ['doc_1', 'doc_2', 'doc_3'],
+      instruction: 'Fix grammar and improve clarity'
+    },
+    {
+      type: 'translate',
+      documentIds: ['doc_4', 'doc_5'],
+      targetLanguage: 'es'
+    }
+  ]
+});
+
+// Check batch status
+const status = await client.batch.getStatus(batch.id);
+```
+
+### Webhooks
+
+Set up webhooks for real-time updates:
+
+```javascript
+// Register webhook
+const webhook = await client.webhooks.create({
+  url: 'https://your-app.com/webhooks/docmind',
+  events: ['document.created', 'document.updated', 'ai.completed'],
+  secret: 'your_webhook_secret'
+});
+
+// Verify webhook signature (in your webhook handler)
+const isValid = client.webhooks.verifySignature(
+  request.body,
+  request.headers['x-docmind-signature'],
+  'your_webhook_secret'
+);
+```
+
+### Custom Models
+
+Use custom AI models for specialized tasks:
+
+```javascript
+// Configure custom model
+const customModel = await client.models.create({
+  name: 'legal-document-analyzer',
+  baseModel: 'docmind-large',
+  finetuneData: 'gs://your-bucket/training-data'
+});
+
+// Use custom model
+const analysis = await client.ai.analyze({
+  documentId: doc.id,
+  modelId: customModel.id,
+  analysisType: 'legal-compliance'
+});
+```
+
+## Error Handling
+
+Properly handle errors in your application:
+
+```javascript
+try {
+  const document = await client.documents.create({
+    title: 'New Document'
+  });
+} catch (error) {
+  if (error.code === 'RATE_LIMIT_EXCEEDED') {
+    // Handle rate limiting
+    console.log(`Rate limited. Retry after ${error.retryAfter} seconds`);
+  } else if (error.code === 'INVALID_REQUEST') {
+    // Handle validation errors
+    console.log('Invalid request:', error.message);
+  } else {
+    // Handle other errors
+    console.error('Unexpected error:', error);
+  }
+}
+```
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="API Key Security">
+    - Never commit API keys to version control
+    - Use environment variables or secret management services
+    - Rotate keys regularly
+    - Use restricted keys for production
+  </Accordion>
+  <Accordion title="Rate Limiting">
+    - Implement exponential backoff for retries
+    - Use batch operations when possible
+    - Cache responses when appropriate
+    - Monitor your usage dashboard
+  </Accordion>
+  <Accordion title="Performance">
+    - Use pagination for large result sets
+    - Implement proper caching strategies
+    - Use webhooks instead of polling
+    - Optimize document sizes
+  </Accordion>
+</AccordionGroup>
+
+## Examples
+
+### Full Example: Report Generator
+
+```javascript
+import { DocMindLLM } from '@docmindllm/sdk';
+
+async function generateMonthlyReport(data) {
+  const client = new DocMindLLM({
+    apiKey: process.env.DOCMIND_API_KEY
+  });
+
+  try {
+    // Create document from template
+    const doc = await client.documents.createFromTemplate({
+      templateId: 'tmpl_monthly_report',
+      data: {
+        month: data.month,
+        metrics: data.metrics
+      }
+    });
+
+    // Enhance with AI
+    await client.ai.enhance({
+      documentId: doc.id,
+      instruction: 'Add executive summary and key insights'
+    });
+
+    // Generate charts
+    const charts = await client.visualizations.create({
+      documentId: doc.id,
+      type: 'auto',
+      data: data.metrics
+    });
+
+    // Export as PDF
+    const pdf = await client.documents.export({
+      documentId: doc.id,
+      format: 'pdf',
+      includeCharts: true
+    });
+
+    return {
+      documentId: doc.id,
+      pdfUrl: pdf.url
+    };
+  } catch (error) {
+    console.error('Report generation failed:', error);
+    throw error;
+  }
+}
+```
+
+## Resources
+
+<CardGroup cols={2}>
+  <Card
+    title="API Reference"
+    icon="book"
+    href="/api-reference/introduction"
+  >
+    Complete API documentation
+  </Card>
+  <Card
+    title="GitHub Examples"
+    icon="github"
+    href="https://github.com/docmindllm/examples"
+  >
+    Example projects and code samples
+  </Card>
+  <Card
+    title="Developer Forum"
+    icon="comments"
+    href="https://forum.docmindllm.com"
+  >
+    Get help from the community
+  </Card>
+  <Card
+    title="Status Page"
+    icon="signal"
+    href="https://status.docmindllm.com"
+  >
+    API status and uptime
+  </Card>
+</CardGroup>

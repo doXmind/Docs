@@ -1,0 +1,187 @@
+---
+title: 'Quickstart'
+description: 'Start creating intelligent documents in under 5 minutes'
+---
+
+## Setup your environment
+
+Getting started with DocMindLLM is straightforward. Follow these steps to begin transforming your document workflow.
+
+### Create an Account
+
+<Steps>
+  <Step title="Sign up">
+    Navigate to [app.docmindllm.com](https://app.docmindllm.com) and click "Get Started"
+  </Step>
+  <Step title="Verify email">
+    Check your email for a verification link and click to activate your account
+  </Step>
+  <Step title="Complete profile">
+    Fill in your profile information and select your primary use case
+  </Step>
+</Steps>
+
+### Install the Desktop App (Optional)
+
+For the best experience, we recommend installing our desktop application:
+
+<CodeGroup>
+
+```bash macOS
+# Download from our website
+curl -L https://docmindllm.com/download/mac -o DocMindLLM.dmg
+# Or use Homebrew
+brew install --cask docmindllm
+```
+
+```bash Windows
+# Download the installer
+https://docmindllm.com/download/windows
+# Or use Chocolatey
+choco install docmindllm
+```
+
+```bash Linux
+# Ubuntu/Debian
+wget https://docmindllm.com/download/linux/deb
+sudo dpkg -i docmindllm.deb
+
+# Fedora/RHEL
+wget https://docmindllm.com/download/linux/rpm
+sudo rpm -i docmindllm.rpm
+```
+
+</CodeGroup>
+
+## Your First Document
+
+Let's create your first AI-powered document:
+
+### 1. Create a New Document
+
+Click the "New Document" button and select your document type:
+
+- **Report** - For business reports and analysis
+- **Article** - For blog posts and articles
+- **Research** - For academic papers and research
+- **Technical** - For documentation and guides
+
+### 2. Use AI Assistant
+
+Start typing and watch DocMindLLM enhance your writing:
+
+<AccordionGroup>
+  <Accordion title="Smart Suggestions">
+    Press `Tab` to accept AI suggestions as you type
+  </Accordion>
+  <Accordion title="Quick Commands">
+    Use `/` to access quick AI commands:
+    - `/rewrite` - Rewrite selected text
+    - `/expand` - Expand on your ideas
+    - `/summarize` - Create a summary
+    - `/translate` - Translate to another language
+  </Accordion>
+  <Accordion title="Templates">
+    Choose from 100+ professional templates or create your own
+  </Accordion>
+</AccordionGroup>
+
+### 3. Collaborate with Your Team
+
+Invite team members to collaborate in real-time:
+
+```javascript
+// Share a document programmatically
+const share = await docmind.documents.share({
+  documentId: 'doc_123',
+  email: 'colleague@company.com',
+  permission: 'edit' // or 'view', 'comment'
+});
+```
+
+## API Quick Start
+
+For developers looking to integrate DocMindLLM:
+
+### Installation
+
+<CodeGroup>
+
+```bash npm
+npm install @docmindllm/sdk
+```
+
+```bash yarn
+yarn add @docmindllm/sdk
+```
+
+```bash pnpm
+pnpm add @docmindllm/sdk
+```
+
+</CodeGroup>
+
+### Authentication
+
+```javascript
+import { DocMindLLM } from '@docmindllm/sdk';
+
+const docmind = new DocMindLLM({
+  apiKey: process.env.DOCMIND_API_KEY
+});
+```
+
+### Create a Document
+
+```javascript
+const document = await docmind.documents.create({
+  title: 'My First Document',
+  content: 'Start writing here...',
+  type: 'report'
+});
+
+// Use AI to enhance the content
+const enhanced = await docmind.ai.enhance({
+  documentId: document.id,
+  prompt: 'Make this more professional'
+});
+```
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card
+    title="Explore Features"
+    icon="compass"
+    href="/features"
+  >
+    Discover all the powerful features DocMindLLM offers
+  </Card>
+  <Card
+    title="API Reference"
+    icon="code"
+    href="/api-reference/introduction"
+  >
+    Deep dive into our comprehensive API
+  </Card>
+  <Card
+    title="Best Practices"
+    icon="book"
+    href="/best-practices"
+  >
+    Learn how to get the most out of DocMindLLM
+  </Card>
+  <Card
+    title="Video Tutorials"
+    icon="video"
+    href="/tutorials"
+  >
+    Watch step-by-step video guides
+  </Card>
+</CardGroup>
+
+## Need Help?
+
+<Card title="Contact Support" icon="headset" href="mailto:support@docmindllm.com">
+  Our support team is available 24/7 to help you succeed
+</Card>
