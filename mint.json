@@ -1,11 +1,11 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "DocMindLLM Documentation",
+  "name": "doXmind",
   "logo": {
-    "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
+    "dark": "/logo/logo-dark.svg",
+    "light": "/logo/logo-light.svg"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/logo/favicon.svg",
   "colors": {
     "primary": "#0F766E",
     "light": "#11c4d4",
@@ -17,35 +17,35 @@
   },
   "topbarLinks": [
     {
-      "name": "Support",
-      "url": "mailto:support@docmindllm.com"
+      "name": "Explore",
+      "url": "https://www.doxmind.com"
     }
   ],
   "topbarCtaButton": {
-    "name": "Dashboard",
-    "url": "https://app.docmindllm.com"
+    "name": "Try Beta",
+    "url": "https://beta.doxmind.app"
   },
   "tabs": [
     {
-      "name": "API Reference",
+      "name": "doXmind",
       "url": "api-reference"
     }
   ],
   "anchors": [
     {
-      "name": "Documentation",
+      "name": "doXmind",
       "icon": "book-open-cover",
-      "url": "https://docs.docmindllm.com"
+      "url": "https://docs.doxmind.com"
     },
     {
-      "name": "Community",
+      "name": "doXmind",
       "icon": "slack",
-      "url": "https://docmindllm.com/slack"
+      "url": "https://doxmind.com/slack"
     },
     {
-      "name": "Blog",
+      "name": "doXmind",
       "icon": "newspaper",
-      "url": "https://docmindllm.com/blog"
+      "url": "https://doxmind.com/blog"
     }
   ],
   "navigation": [
@@ -85,8 +85,8 @@
     }
   ],
   "footerSocials": {
-    "x": "https://x.com/docmindllm",
-    "github": "https://github.com/docmindllm",
-    "linkedin": "https://www.linkedin.com/company/docmindllm"
+    "x": "https://x.com/doxmind",
+    "github": "https://github.com/doxmind",
+    "linkedin": "https://www.linkedin.com/company/doxmind"
   }
 }

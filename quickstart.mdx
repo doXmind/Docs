@@ -1,187 +1,119 @@
 ---
 title: 'Quickstart'
-description: 'Start creating intelligent documents in under 5 minutes'
+description: 'Get started with doXmind Open Beta in under 5 minutes'
 ---
 
-## Setup your environment
+<Warning>
+  **Open Beta Notice**: doXmind is currently in public beta testing. During this phase, all workspaces and files are publicly accessible. Please do not upload sensitive or confidential information.
+</Warning>
 
-Getting started with DocMindLLM is straightforward. Follow these steps to begin transforming your document workflow.
+## Get Beta Access
 
-### Create an Account
+doXmind is currently in Open Beta and available for everyone to try.
 
 <Steps>
-  <Step title="Sign up">
-    Navigate to [app.docmindllm.com](https://app.docmindllm.com) and click "Get Started"
+  <Step title="Request Access">
+    Visit [www.doxmind.com](https://www.doxmind.com) and apply for beta access
+
+    *Note: The waitlist application page is currently under development. Access may be granted directly during early beta phase.*
   </Step>
-  <Step title="Verify email">
-    Check your email for a verification link and click to activate your account
+  <Step title="Receive Confirmation">
+    You'll receive an email with your beta access confirmation and next steps
   </Step>
-  <Step title="Complete profile">
-    Fill in your profile information and select your primary use case
+  <Step title="Access the Platform">
+    Navigate to [beta.doxmind.app](https://beta.doxmind.app) and sign in with your credentials
   </Step>
 </Steps>
 
-### Install the Desktop App (Optional)
+## Quick Start Guide
 
-For the best experience, we recommend installing our desktop application:
+### 1. Create Your First Workspace
 
-<CodeGroup>
+After signing in, you'll need to create a workspace to get started:
 
-```bash macOS
-# Download from our website
-curl -L https://docmindllm.com/download/mac -o DocMindLLM.dmg
-# Or use Homebrew
-brew install --cask docmindllm
-```
+<Steps>
+  <Step title="Click 'New Workspace'">
+    From the main dashboard, click the "New Workspace" button
+  </Step>
+  <Step title="Name Your Workspace">
+    Give your workspace a descriptive name (e.g., "My Research Project", "Content Writing")
+  </Step>
+  <Step title="Configure Settings">
+    Choose your workspace preferences and click "Create"
+  </Step>
+</Steps>
 
-```bash Windows
-# Download the installer
-https://docmindllm.com/download/windows
-# Or use Chocolatey
-choco install docmindllm
-```
+### 2. Start Working with doXmind Agent
 
-```bash Linux
-# Ubuntu/Debian
-wget https://docmindllm.com/download/linux/deb
-sudo dpkg -i docmindllm.deb
-
-# Fedora/RHEL
-wget https://docmindllm.com/download/linux/rpm
-sudo rpm -i docmindllm.rpm
-```
-
-</CodeGroup>
-
-## Your First Document
-
-Let's create your first AI-powered document:
-
-### 1. Create a New Document
-
-Click the "New Document" button and select your document type:
-
-- **Report** - For business reports and analysis
-- **Article** - For blog posts and articles
-- **Research** - For academic papers and research
-- **Technical** - For documentation and guides
-
-### 2. Use AI Assistant
-
-Start typing and watch DocMindLLM enhance your writing:
+Once your workspace is ready, interact with the doXmind AI agent through the sidebar:
 
 <AccordionGroup>
-  <Accordion title="Smart Suggestions">
-    Press `Tab` to accept AI suggestions as you type
+  <Accordion title="Ask Questions">
+    Use the sidebar to ask doXmind questions about your work, research topics, or get AI assistance
   </Accordion>
-  <Accordion title="Quick Commands">
-    Use `/` to access quick AI commands:
-    - `/rewrite` - Rewrite selected text
-    - `/expand` - Expand on your ideas
-    - `/summarize` - Create a summary
-    - `/translate` - Translate to another language
+  <Accordion title="Create Documents">
+    Request doXmind to help you create, edit, and enhance documents
   </Accordion>
-  <Accordion title="Templates">
-    Choose from 100+ professional templates or create your own
+  <Accordion title="Analyze Data">
+    Upload data and ask doXmind to analyze, visualize, or extract insights
   </Accordion>
 </AccordionGroup>
 
-### 3. Collaborate with Your Team
+## Core Features
 
-Invite team members to collaborate in real-time:
+### AutoComplete
+Start typing and doXmind will intelligently suggest completions based on your context and knowledge bases.
 
-```javascript
-// Share a document programmatically
-const share = await docmind.documents.share({
-  documentId: 'doc_123',
-  email: 'colleague@company.com',
-  permission: 'edit' // or 'view', 'comment'
-});
-```
+### Knowledge Bases
+Build and manage your own knowledge repositories that doXmind can reference when assisting you with tasks.
 
-## API Quick Start
+### Document Editing
+Collaborative document editing powered by AI. Create, refine, and perfect your documents with intelligent assistance.
 
-For developers looking to integrate DocMindLLM:
+### AI Collaboration
+Work alongside doXmind's AI agent to:
+- Brainstorm ideas
+- Research topics
+- Draft and refine content
+- Solve complex problems
 
-### Installation
+### Document Analysis
+Upload and analyze documents to extract key insights, summaries, and actionable information.
 
-<CodeGroup>
-
-```bash npm
-npm install @docmindllm/sdk
-```
-
-```bash yarn
-yarn add @docmindllm/sdk
-```
-
-```bash pnpm
-pnpm add @docmindllm/sdk
-```
-
-</CodeGroup>
-
-### Authentication
-
-```javascript
-import { DocMindLLM } from '@docmindllm/sdk';
-
-const docmind = new DocMindLLM({
-  apiKey: process.env.DOCMIND_API_KEY
-});
-```
-
-### Create a Document
-
-```javascript
-const document = await docmind.documents.create({
-  title: 'My First Document',
-  content: 'Start writing here...',
-  type: 'report'
-});
-
-// Use AI to enhance the content
-const enhanced = await docmind.ai.enhance({
-  documentId: document.id,
-  prompt: 'Make this more professional'
-});
-```
-
-## Next Steps
-
-<CardGroup cols={2}>
-  <Card
-    title="Explore Features"
-    icon="compass"
-    href="/features"
-  >
-    Discover all the powerful features DocMindLLM offers
-  </Card>
-  <Card
-    title="API Reference"
-    icon="code"
-    href="/api-reference/introduction"
-  >
-    Deep dive into our comprehensive API
-  </Card>
-  <Card
-    title="Best Practices"
-    icon="book"
-    href="/best-practices"
-  >
-    Learn how to get the most out of DocMindLLM
-  </Card>
-  <Card
-    title="Video Tutorials"
-    icon="video"
-    href="/tutorials"
-  >
-    Watch step-by-step video guides
-  </Card>
-</CardGroup>
+### Data Analysis & Visualization
+Transform raw data into meaningful insights with:
+- Automated data analysis
+- Interactive visualizations
+- Statistical summaries
+- Custom charts and graphs
 
 ## Need Help?
 
-<Card title="Contact Support" icon="headset" href="mailto:support@docmindllm.com">
-  Our support team is available 24/7 to help you succeed
+<CardGroup cols={2}>
+  <Card
+    title="Email Support"
+    icon="envelope"
+    href="mailto:support@doxmind.com"
+  >
+    Reach out to our support team at support@doxmind.com
+  </Card>
+  <Card
+    title="Community"
+    icon="comments"
+    href="https://www.doxmind.com"
+  >
+    Join our community to connect with other beta users
+
+    *Discord community coming soon*
+  </Card>
+</CardGroup>
+
+## What's Next?
+
+<Card
+  title="Explore the Documentation"
+  icon="book-open"
+  href="/introduction"
+>
+  Learn more about doXmind's features and capabilities
 </Card>

@@ -1,128 +1,113 @@
-# DocMindLLM Documentation
+# doXmind Documentation
 
-This repository contains the official documentation for DocMindLLM, built with [Mintlify](https://mintlify.com).
+This is the official documentation site for doXmind, an AI-powered document intelligence platform. The documentation is built with [Mintlify](https://mintlify.com).
 
-## 🚀 Getting Started
+## Getting Started
+
+To get a local copy up and running, follow these simple steps.
 
 ### Prerequisites
 
-- Node.js 18.x or higher
-- npm or yarn
+You need to have Node.js and npm installed on your machine.
+
+- [Node.js](https://nodejs.org/) (18.x or higher)
+- [npm](https://www.npmjs.com/get-npm)
 
 ### Installation
 
-```bash
-# Install Mintlify CLI
-npm i -g mintlify
+1. Clone the repo
+   ```sh
+   git clone https://github.com/your_username_/doXmind-Docs.git
+   ```
+2. Install Mintlify CLI globally
+   ```sh
+   npm i -g mintlify
+   ```
 
-# Clone this repository
-git clone https://github.com/docmindllm/docs.git
-cd docs
+### Running the Application
 
-# Start the development server
-mintlify dev
+To run the documentation site in development mode, use the following command:
+
+```sh
+npm run dev
 ```
 
-The documentation will be available at `http://localhost:3000`.
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser. The page will reload if you make edits.
 
-## 📁 Project Structure
+### Building the Application
 
-```
-.
-├── mint.json              # Mintlify configuration
-├── introduction.mdx       # Homepage
-├── quickstart.mdx        # Getting started guide
-├── development.mdx       # Development guide
-├── essentials/           # Core documentation
-│   ├── markdown.mdx
-│   ├── code.mdx
-│   └── ...
-├── api-reference/        # API documentation
-│   ├── introduction.mdx
-│   └── endpoint/
-│       ├── create.mdx
-│       ├── get.mdx
-│       └── ...
-└── logo/                 # Logo assets
+To build the documentation for production, use the following command:
+
+```sh
+npm run build
 ```
 
-## 🎨 Customization
+This will build the documentation site for production to the `.mintlify/dist` folder. It correctly optimizes the build for the best performance.
 
-### Theme Configuration
+## Project Structure
 
-Edit `mint.json` to customize:
-- Colors and branding
-- Navigation structure
-- Social links
-- API settings
+- `mint.json`: The main configuration file for Mintlify (navigation, branding, colors).
+- `package.json`: Contains the project's metadata and dependencies.
+- `introduction.mdx`: The homepage/welcome page.
+- `quickstart.mdx`: Quick start guide.
+- `development.mdx`: Development guide.
+- `api-reference/`: Contains the API documentation.
+  - `introduction.mdx`: API documentation landing page.
+  - `endpoint/`: Contains API endpoint examples.
+- `logo/`: Contains logo assets (dark and light versions).
+- `.github/workflows/`: Contains GitHub Actions configuration for automated deployment.
+
+## Editing Documentation
+
+### Editing Existing Pages
+
+Simply edit the `.mdx` files in the root directory or subdirectories. Each MDX file supports:
+- Standard Markdown syntax
+- React components (Cards, Steps, Tabs, etc.)
+- Frontmatter for metadata (title, description)
 
 ### Adding New Pages
 
 1. Create a new `.mdx` file in the appropriate directory
-2. Add frontmatter with title and description
-3. Update the navigation in `mint.json`
+2. Add frontmatter at the top:
+   ```yaml
+   ---
+   title: Your Page Title
+   description: 'Your page description'
+   ---
+   ```
+3. Update `mint.json` to add the page to navigation
 
-## 🚀 Deployment
+### Customizing Theme
 
-### Mintlify Hosting
+Edit `mint.json` to customize:
+- Brand colors and logo
+- Navigation structure
+- Footer links and social media
+- Top navigation bar
 
-The easiest way to deploy is using Mintlify's hosting:
+## Deployment
 
-```bash
-# Deploy to Mintlify
-mintlify deploy
+This project uses GitHub Actions for automated deployment. When you push to the `main` or `master` branch, the documentation is automatically deployed to Mintlify hosting.
+
+You can also manually deploy using:
+
+```sh
+npm run deploy
 ```
 
-### Custom Domain
+## Available Scripts
 
-1. Add your custom domain in the Mintlify dashboard
-2. Update DNS records as instructed
-3. SSL certificates are automatically provisioned
+- `npm run dev` - Start local development server
+- `npm run build` - Build static files for production
+- `npm run deploy` - Deploy to Mintlify hosting
+- `npm run preview` - Preview the production build locally
 
-### Self-Hosting
+## Learn More
 
-You can also build and host the documentation yourself:
+- [Mintlify Documentation](https://mintlify.com/docs)
+- [MDX Documentation](https://mdxjs.com/)
 
-```bash
-# Build static files
-mintlify build
+## Support
 
-# The output will be in the .mintlify/dist directory
-```
-
-## 📝 Writing Documentation
-
-### Markdown Features
-
-Mintlify supports:
-- Standard Markdown syntax
-- MDX components
-- Code blocks with syntax highlighting
-- Custom components (Cards, Tabs, etc.)
-
-### Best Practices
-
-1. Use clear, descriptive titles
-2. Include code examples
-3. Add helpful descriptions
-4. Use components for better UX
-5. Keep content up-to-date
-
-## 🤝 Contributing
-
-We welcome contributions! Please:
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
-
-## 📄 License
-
-This documentation is licensed under the MIT License.
-
-## 🔗 Links
-
-- [DocMindLLM Website](https://docmindllm.com)
-- [API Status](https://status.docmindllm.com)
-- [Support](mailto:support@docmindllm.com)
+For questions and support, please contact [support@doxmind.com](mailto:support@doxmind.com)

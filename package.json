@@ -1,7 +1,7 @@
 {
-  "name": "docmindllm-docs",
+  "name": "doXmind",
   "version": "1.0.0",
-  "description": "Official documentation for DocMindLLM",
+  "description": "Official documentation for doXmind",
   "scripts": {
     "dev": "mintlify dev",
     "build": "mintlify build",
@@ -10,10 +10,10 @@
   },
   "keywords": [
     "documentation",
-    "docmindllm",
+    "doxmind",
     "mintlify"
   ],
-  "author": "DocMindLLM Team",
+  "author": "doXmind Team",
   "license": "MIT",
   "devDependencies": {
     "mintlify": "^4.0.0"

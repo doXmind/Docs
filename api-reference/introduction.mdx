@@ -1,36 +1,36 @@
 ---
 title: 'API Introduction'
-description: 'Introduction to the DocMindLLM REST API'
+description: 'Introduction to the doXmind REST API'
 ---
 
-## Welcome to the DocMindLLM API
+## Welcome to the doXmind API
 
-The DocMindLLM API is a powerful RESTful interface that allows you to integrate intelligent document processing capabilities into your applications. With our API, you can create, analyze, enhance, and manage documents programmatically.
+The doXmind API is a powerful RESTful interface that allows you to integrate intelligent document processing capabilities into your applications. With our API, you can create, analyze, enhance, and manage documents programmatically.
 
 ## Base URL
 
 All API requests should be made to:
 
 ```
-https://api.docmindllm.com/v1
+https://api.doxmind.com/v1
 ```
 
 ## Authentication
 
-The DocMindLLM API uses API keys for authentication. Include your API key in the request header:
+The doXmind API uses API keys for authentication. Include your API key in the request header:
 
 ```bash
 Authorization: Bearer YOUR_API_KEY
 ```
 
 <Note>
-  Get your API key from the [Dashboard](https://app.docmindllm.com/settings/api-keys)
+  Get your API key from the [Dashboard](https://app.doxmind.com/settings/api-keys)
 </Note>
 
 ### Example Request
 
 ```bash
-curl https://api.docmindllm.com/v1/documents \
+curl https://api.doxmind.com/v1/documents \
   -H "Authorization: Bearer YOUR_API_KEY" \
   -H "Content-Type: application/json"
 ```
@@ -158,16 +158,16 @@ Official SDKs are available for:
 
 <CardGroup cols={2}>
   <Card title="JavaScript/TypeScript" icon="js" href="/sdks/javascript">
-    `npm install @docmindllm/sdk`
+    `npm install @doxmind/sdk`
   </Card>
   <Card title="Python" icon="python" href="/sdks/python">
-    `pip install docmindllm`
+    `pip install doxmind`
   </Card>
   <Card title="Go" icon="golang" href="/sdks/go">
-    `go get github.com/docmindllm/docmindllm-go`
+    `go get github.com/doxmind/doxmind-go`
   </Card>
   <Card title="Ruby" icon="gem" href="/sdks/ruby">
-    `gem install docmindllm`
+    `gem install doxmind`
   </Card>
 </CardGroup>
 
@@ -178,7 +178,7 @@ Here's a simple example to get you started:
 <CodeGroup>
 
 ```bash cURL
-curl -X POST https://api.docmindllm.com/v1/documents \
+curl -X POST https://api.doxmind.com/v1/documents \
   -H "Authorization: Bearer YOUR_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -189,7 +189,7 @@ curl -X POST https://api.docmindllm.com/v1/documents \
 ```
 
 ```javascript JavaScript
-const response = await fetch('https://api.docmindllm.com/v1/documents', {
+const response = await fetch('https://api.doxmind.com/v1/documents', {
   method: 'POST',
   headers: {
     'Authorization': 'Bearer YOUR_API_KEY',
@@ -209,7 +209,7 @@ const document = await response.json();
 import requests
 
 response = requests.post(
-    'https://api.docmindllm.com/v1/documents',
+    'https://api.doxmind.com/v1/documents',
     headers={
         'Authorization': 'Bearer YOUR_API_KEY',
         'Content-Type': 'application/json'

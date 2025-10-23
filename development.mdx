@@ -1,34 +1,34 @@
 ---
 title: 'Development'
-description: 'Learn how to develop with DocMindLLM SDK and APIs'
+description: 'Learn how to develop with doXmind SDK and APIs'
 ---
 
 ## Overview
 
-DocMindLLM provides a comprehensive SDK and REST API for developers to integrate intelligent document processing into their applications.
+doXmind provides a comprehensive SDK and REST API for developers to integrate intelligent document processing into their applications.
 
 ## SDK Installation
 
-Install the DocMindLLM SDK for your preferred language:
+Install the doXmind SDK for your preferred language:
 
 <CodeGroup>
 
 ```bash JavaScript/TypeScript
-npm install @docmindllm/sdk
+npm install @doxmind/sdk
 # or
-yarn add @docmindllm/sdk
+yarn add @doxmind/sdk
 ```
 
 ```bash Python
-pip install docmindllm
+pip install doxmind
 ```
 
 ```bash Go
-go get github.com/docmindllm/docmindllm-go
+go get github.com/doxmind/doxmind-go
 ```
 
 ```bash Ruby
-gem install docmindllm
+gem install doxmind
 ```
 
 </CodeGroup>
@@ -41,7 +41,7 @@ Create a `.env` file in your project root:
 
 ```bash
 DOCMIND_API_KEY=your_api_key_here
-DOCMIND_API_URL=https://api.docmindllm.com/v1
+DOCMIND_API_URL=https://api.doxmind.com/v1
 DOCMIND_WORKSPACE_ID=your_workspace_id
 ```
 
@@ -50,29 +50,29 @@ DOCMIND_WORKSPACE_ID=your_workspace_id
 <CodeGroup>
 
 ```javascript JavaScript
-import { DocMindLLM } from '@docmindllm/sdk';
+import { doXmind } from '@doxmind/sdk';
 
-const client = new DocMindLLM({
+const client = new doXmind({
   apiKey: process.env.DOCMIND_API_KEY,
   workspace: process.env.DOCMIND_WORKSPACE_ID
 });
 ```
 
 ```python Python
-from docmindllm import DocMindLLM
+from doxmind import doXmind
 
-client = DocMindLLM(
+client = doXmind(
     api_key=os.getenv('DOCMIND_API_KEY'),
     workspace=os.getenv('DOCMIND_WORKSPACE_ID')
 )
 ```
 
 ```go Go
-import "github.com/docmindllm/docmindllm-go"
+import "github.com/doxmind/doxmind-go"
 
-client := docmindllm.NewClient(
-    docmindllm.WithAPIKey(os.Getenv("DOCMIND_API_KEY")),
-    docmindllm.WithWorkspace(os.Getenv("DOCMIND_WORKSPACE_ID")),
+client := doxmind.NewClient(
+    doxmind.WithAPIKey(os.Getenv("DOCMIND_API_KEY")),
+    doxmind.WithWorkspace(os.Getenv("DOCMIND_WORKSPACE_ID")),
 )
 ```
 
@@ -82,7 +82,7 @@ client := docmindllm.NewClient(
 
 ### Documents
 
-Documents are the primary objects in DocMindLLM:
+Documents are the primary objects in doXmind:
 
 ```javascript
 // Create a document
@@ -269,10 +269,10 @@ try {
 ### Full Example: Report Generator
 
 ```javascript
-import { DocMindLLM } from '@docmindllm/sdk';
+import { doXmind } from '@doxmind/sdk';
 
 async function generateMonthlyReport(data) {
-  const client = new DocMindLLM({
+  const client = new doXmind({
     apiKey: process.env.DOCMIND_API_KEY
   });
 
@@ -330,21 +330,21 @@ async function generateMonthlyReport(data) {
   <Card
     title="GitHub Examples"
     icon="github"
-    href="https://github.com/docmindllm/examples"
+    href="https://github.com/doxmind/examples"
   >
     Example projects and code samples
   </Card>
   <Card
     title="Developer Forum"
     icon="comments"
-    href="https://forum.docmindllm.com"
+    href="https://forum.doxmind.com"
   >
     Get help from the community
   </Card>
   <Card
     title="Status Page"
     icon="signal"
-    href="https://status.docmindllm.com"
+    href="https://status.doxmind.com"
   >
     API status and uptime
   </Card>
