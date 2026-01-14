@@ -1,0 +1,82 @@
+---
+title: Knowledge Base
+description: Upload documents and chat with their content using RAG
+---
+
+The Knowledge Base feature lets you upload documents and have the AI search, read, and reference them when answering your questions. This is powered by RAG (Retrieval-Augmented Generation) - semantic vector search that finds relevant information in your files.
+
+## What is Knowledge Base?
+
+When you upload documents to your conversation, doXmind:
+
+1. Extracts the text content from your files
+2. Splits the content into searchable chunks
+3. Creates semantic embeddings for intelligent search
+4. Enables the AI to find and cite relevant passages
+
+This means you can ask questions about your documents and get accurate answers with references to the source material.
+
+## Supported File Types
+
+<CardGroup cols={3}>
+  <Card title="PDF" icon="file-pdf">
+    Research papers, reports, ebooks, and any PDF document.
+  </Card>
+  <Card title="Word" icon="file-word">
+    Microsoft Word documents (.docx) with formatting preserved.
+  </Card>
+  <Card title="PowerPoint" icon="file-powerpoint">
+    Presentation files (.pptx) - slides are converted to searchable text.
+  </Card>
+</CardGroup>
+
+**File size limit:** Up to 50MB per file.
+
+## How to Upload
+
+<Steps>
+  <Step title="Open the chat panel">
+    Click the chat icon to open the AI assistant panel.
+  </Step>
+  <Step title="Upload your files">
+    Drag and drop files directly into the chat area, or click the attachment button to browse.
+  </Step>
+  <Step title="Wait for processing">
+    The file is processed and indexed. You'll see a confirmation when it's ready.
+  </Step>
+  <Step title="Ask questions">
+    Start chatting! The AI will automatically search your uploaded documents when relevant.
+  </Step>
+</Steps>
+
+## How RAG Search Works
+
+When you ask a question, the AI:
+
+1. **Searches** your uploaded documents for relevant passages
+2. **Retrieves** the most relevant chunks of text
+3. **Generates** an answer using both the retrieved information and its own knowledge
+4. **Cites** the source documents when appropriate
+
+This ensures answers are grounded in your actual documents rather than just general AI knowledge.
+
+## Use Cases
+
+<AccordionGroup>
+  <Accordion title="Research Papers">
+    Upload academic papers and ask the AI to summarize findings, explain methodologies, or compare conclusions across multiple papers.
+  </Accordion>
+  <Accordion title="Reports & Documentation">
+    Upload company reports, technical documentation, or specifications. Ask questions to quickly find specific information.
+  </Accordion>
+  <Accordion title="Meeting Notes">
+    Upload meeting notes and let the AI help you find action items, decisions, or specific discussions.
+  </Accordion>
+  <Accordion title="Reference Materials">
+    Upload style guides, brand guidelines, or reference documents that the AI should consider when helping you write.
+  </Accordion>
+</AccordionGroup>
+
+<Tip>
+Upload multiple related documents to give the AI a broader knowledge base. It can cross-reference information across all your uploaded files.
+</Tip>

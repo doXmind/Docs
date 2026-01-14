@@ -17,70 +17,53 @@
   },
   "topbarLinks": [
     {
-      "name": "Explore",
+      "name": "Website",
       "url": "https://www.doxmind.com"
     }
   ],
   "topbarCtaButton": {
-    "name": "Try Beta",
+    "name": "Try doXmind",
     "url": "https://beta.doxmind.com"
   },
-  "tabs": [
-    {
-      "name": "doXmind",
-      "url": "api-reference"
-    }
-  ],
   "anchors": [
     {
-      "name": "doXmind",
-      "icon": "book-open-cover",
-      "url": "https://docs.doxmind.com"
-    },
-    {
-      "name": "doXmind",
-      "icon": "slack",
-      "url": "https://doxmind.com/slack"
-    },
-    {
-      "name": "doXmind",
-      "icon": "newspaper",
-      "url": "https://doxmind.com/blog"
+      "name": "Website",
+      "icon": "globe",
+      "url": "https://www.doxmind.com"
     }
   ],
   "navigation": [
     {
-      "group": "Get Started",
+      "group": "Getting Started",
       "pages": [
         "introduction",
-        "quickstart",
-        "development"
+        "quickstart"
       ]
     },
     {
-      "group": "Essentials",
+      "group": "AI Features",
       "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/settings",
-        "essentials/navigation",
-        "essentials/reusable-snippets"
+        "features/ai-chat",
+        "features/quick-edit",
+        "features/autocomplete",
+        "features/knowledge-base",
+        "features/image-analysis"
       ]
     },
     {
-      "group": "API Documentation",
+      "group": "Editor",
       "pages": [
-        "api-reference/introduction"
+        "features/editor",
+        "features/file-management",
+        "features/version-history"
       ]
     },
     {
-      "group": "Endpoint Examples",
+      "group": "Interface",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/update",
-        "api-reference/endpoint/delete"
+        "interface/overview",
+        "interface/keyboard-shortcuts",
+        "interface/mobile"
       ]
     }
   ],
