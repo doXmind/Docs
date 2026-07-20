@@ -1,0 +1,40 @@
+---
+title: "Markdown editor"
+description: "Write portable Markdown in a focused rich-text editing surface."
+---
+
+doXmind presents Markdown as a rich document while saving portable text to your `.md` or `.markdown` file.
+
+## Write and structure
+
+The editor supports common Markdown structures including:
+
+- Headings and paragraphs
+- Bulleted, numbered, and task lists
+- Quotes, dividers, links, and images
+- Inline code and fenced code blocks
+- Tables
+
+Type `/` to open the block menu, or press `Cmd+K` to open the command palette.
+
+## Navigate a long document
+
+- Open the outline to jump between headings.
+- Press `Cmd+F` to search within the current document.
+- Press `F11` for focus mode.
+- Press `Cmd+B` to show or hide the workspace sidebar.
+
+## Work with external Markdown
+
+The `.md` file is always readable outside doXmind. If another editor changes it, doXmind imports the updated Markdown the next time the document is opened. On save, the sidecar is refreshed to match the new source.
+
+Some rich blocks have no exact Markdown equivalent. Their detailed state is kept in the hidden sidecar, while the `.md` file retains a portable representation.
+
+<CardGroup cols={2}>
+  <Card title="Rich blocks" icon="shapes" href="/markdown/rich-blocks">
+    Add callouts, math, diagrams, columns, bookmarks, and more.
+  </Card>
+  <Card title="Save and export" icon="file-export" href="/markdown/save-and-export">
+    Understand source saves, sidecars, Markdown copies, and PDF export.
+  </Card>
+</CardGroup>

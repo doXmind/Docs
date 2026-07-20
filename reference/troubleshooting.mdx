@@ -1,0 +1,48 @@
+---
+title: "Troubleshooting"
+description: "Resolve common installation, file, sidecar, PDF, and spreadsheet issues."
+---
+
+## A file does not appear in the workspace
+
+- Confirm that it uses a stable format: Markdown, PDF, or XLSX. XLSM support is limited.
+- Refresh or reopen the folder after changing files outside doXmind.
+- Convert CSV files to `.xlsx`; DOCX and PPTX are not supported.
+
+## A scanned PDF has no editable text
+
+doXmind does not include OCR. It can display image-only pages, but text editing requires text that can already be extracted from the PDF.
+
+## PDF or workbook edits seem to be missing
+
+PDF and spreadsheet **Save** writes editable state to the hidden sidecar, not to the original source file. Keep the sidecar next to the source, then use the format-specific export action to create a new edited PDF or `.xlsx` file.
+
+## Changes are missing from an export
+
+1. Save and wait for the header to show **Saved**.
+2. Use **Export PDF** or **Export XLSX** from the document menu.
+3. Open the newly exported file, not the original source.
+4. For spreadsheets, recheck formulas after structural row or column changes.
+
+## A document is read-only after an upgrade
+
+An older PDF or spreadsheet sidecar may need migration. Follow the recovery message shown by doXmind. Do not delete `.lock`, `.bak`, or `.corrupt-*` files manually; they may be required to recover the previous state. If the app directs you to restore a `.bak`, close doXmind first, preserve the current sidecar, and confirm that the backup belongs to the same source file before replacing anything.
+
+## Hidden sidecars are not visible
+
+In Finder or the macOS Trash, press `Cmd+Shift+.` to show hidden files. A sidecar begins with a dot and ends in `.doxmind`.
+
+## A file is too large to open
+
+The local file import limit is 10 MiB. Workbooks are also capped at 64 worksheets, 5,000 rows per sheet, and 200 columns per sheet. Split large documents when possible.
+
+## Still need help?
+
+Email [support@doxmind.com](mailto:support@doxmind.com) and include:
+
+- Your doXmind version from **Settings → About**
+- Your macOS version
+- The document type and approximate size
+- The exact message shown in the app
+
+Do not attach private documents unless you intend to share their contents with support.

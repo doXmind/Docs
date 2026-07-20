@@ -1,92 +1,67 @@
 ---
-title: 'Quick Start'
-description: 'Get up and running with doXmind in 5 minutes'
+title: "Quickstart"
+description: "Install doXmind and create your first local workspace."
 ---
 
-<Warning>
-  **Open Beta**: doXmind is currently in public beta testing. During this phase, all workspaces and files are publicly accessible. Please do not upload sensitive or confidential information.
-</Warning>
-
-## Get Started
+## 1. Install the desktop app
 
 <Steps>
-  <Step title="Open doXmind">
-    Visit [beta.doxmind.com](https://beta.doxmind.com) and sign in to access the editor.
+  <Step title="Download the latest release">
+    Download the [macOS Apple silicon `.dmg`](https://github.com/doXmind/releases/releases/latest/download/doXmind-mac-arm64.dmg).
   </Step>
-  <Step title="Create a document">
-    Click the **+** button in the sidebar to create your first document.
+  <Step title="Move doXmind to Applications">
+    Open the disk image, then drag doXmind into your Applications folder.
   </Step>
-  <Step title="Start writing">
-    Begin typing in the editor. Your work is saved automatically.
+  <Step title="Launch doXmind">
+    Open doXmind from Applications. No account or sign-in is required.
   </Step>
 </Steps>
 
-## 5-Minute Quick Start
+## 2. Choose how to start
 
-Follow these steps to experience doXmind's core AI features:
+The welcome screen gives you three options:
 
-### 1. Create Your First Document
+- **Open Folder** — use a folder as a workspace and browse its documents in the sidebar.
+- **Open File** — open one Markdown, PDF, or Excel file without creating a workspace.
+- **New Document** — create a new local Markdown file.
 
-Click the **+** button in the left sidebar to create a new document. Give it a name and start writing.
+For ongoing projects, choose **Open Folder**. doXmind only works inside the folder you select and its subfolders.
 
-<Tip>
-Your documents are saved automatically as you type - no need to manually save.
-</Tip>
+## 3. Create or open a document
 
-### 2. Try Quick Edit
+In a folder workspace, use the sidebar to create a blank Markdown document, a PDF, a spreadsheet, or a new folder. You can also open existing `.md`, `.markdown`, `.pdf`, and `.xlsx` files.
 
-Select any text you've written, then right-click or use the floating menu. Choose **"Improve Writing"** to enhance your text with AI.
+## 4. Save your work
 
-Other Quick Edit options to try:
-- **Fix Grammar** - Correct spelling and grammar
-- **Simplify** - Make text easier to understand
-- **Translate** - Convert to another language
+Press `Cmd+S`.
 
-### 3. Chat with AI
+- Markdown saves to the source file and a hidden sidecar.
+- PDF and spreadsheet edits save to a hidden sidecar next to the original.
+- To create a new edited PDF or workbook, choose **Export PDF** or **Export XLSX** from the document menu.
 
-Click the chat icon in the top-right corner to open the AI chat panel. Ask the AI to help you:
+<Warning>
+  Keep each hidden `.doxmind` sidecar with its source file when moving, copying, restoring, or backing up a document. PDF and spreadsheet edits live in that sidecar until you export a new file.
+</Warning>
 
-- "Help me write an introduction for this document"
-- "Expand on this paragraph"
-- "What are the main points I should cover?"
-
-<Tip>
-Type `@` followed by a filename to include another document as context for the AI.
-</Tip>
-
-### 4. Upload to Knowledge Base
-
-Drag a PDF or Word file into the chat panel. Once uploaded, the AI can search and reference the document's content when answering your questions.
-
-Try asking: "Summarize the key points from the document I uploaded"
-
-### 5. Accept AI Suggestions
-
-As you type, AI suggestions appear as faded gray text after your cursor. Press **Tab** to accept the suggestion, or keep typing to dismiss it.
-
-## What's Next?
+## Next steps
 
 <CardGroup cols={2}>
-  <Card title="AI Chat Assistant" icon="message" href="/features/ai-chat">
-    Learn how to get the most from AI conversations
+  <Card title="Open files and folders" icon="folder-open" href="/workspaces/opening-files">
+    Learn the difference between a workspace and a standalone file.
   </Card>
-  <Card title="Quick Edit" icon="wand-magic-sparkles" href="/features/quick-edit">
-    Explore all Quick Edit commands
+  <Card title="Edit Markdown" icon="file-lines" href="/markdown/editor">
+    Explore the editor, outline, search, and document tools.
   </Card>
-  <Card title="Knowledge Base" icon="database" href="/features/knowledge-base">
-    Upload documents for AI to reference
+  <Card title="Edit a PDF" icon="file-pdf" href="/pdf/edit-and-annotate">
+    Add annotations, edit extracted text, and export a copy.
   </Card>
-  <Card title="Keyboard Shortcuts" icon="keyboard" href="/interface/keyboard-shortcuts">
-    Speed up your workflow
+  <Card title="Edit a workbook" icon="table" href="/spreadsheets/workbooks">
+    Work with sheets, formulas, formatting, and filters.
+  </Card>
+  <Card title="Check supported formats" icon="file-circle-check" href="/reference/supported-formats">
+    Review current format, size, and compatibility limits.
+  </Card>
+  <Card title="Learn the shortcuts" icon="keyboard" href="/reference/keyboard-shortcuts">
+    Open, save, search, and switch documents faster.
   </Card>
 </CardGroup>
-
-## Need Help?
-
-<Card
-  title="Email Support"
-  icon="envelope"
-  href="mailto:support@doxmind.com"
->
-  Reach out to our support team at support@doxmind.com
-</Card>

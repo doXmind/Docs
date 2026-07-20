@@ -1,105 +1,56 @@
 ---
-title: Welcome to doXmind
-description: 'Your AI-powered writing assistant - write better, faster'
+title: "Introduction"
+description: "Meet doXmind, a local-first desktop workspace for Markdown, PDF, and spreadsheets."
 ---
 
-<Warning>
-  **Open Beta**: doXmind is currently in public beta testing. During this phase, all workspaces and files are publicly accessible. Please do not upload sensitive or confidential information.
-</Warning>
+doXmind is a desktop workspace for writing, reviewing, and organizing documents without moving them into a hosted web app. Open files from your Mac, edit them in a focused interface, and keep the original files in folders you control.
 
-## What is doXmind?
+<Card title="Download doXmind for macOS" icon="download" href="https://github.com/doXmind/releases/releases/latest/download/doXmind-mac-arm64.dmg">
+  Get the latest public release for Apple silicon.
+</Card>
 
-doXmind is an AI-powered writing assistant that helps you write better, faster. Think of it as **"Cursor for Writing"** - bringing the power of AI assistance to document creation.
+## Built around your files
 
-Powered by Claude AI with 200K token context, doXmind understands your entire document and provides intelligent assistance throughout your writing process.
-
-## Key Features
-
-<CardGroup cols={2}>
-  <Card
-    title="Rich Markdown Editor"
-    icon="pen"
-    href="/features/editor"
-  >
-    Full-featured editor with formatting, code blocks, tables, images, and real-time preview.
-  </Card>
-  <Card
-    title="AI Chat Assistant"
-    icon="message"
-    href="/features/ai-chat"
-  >
-    Have conversations with AI about your document. Ask questions, get help, or request direct edits.
-  </Card>
-  <Card
-    title="Quick Edit"
-    icon="wand-magic-sparkles"
-    href="/features/quick-edit"
-  >
-    Select text and instantly improve, fix grammar, translate, or change tone with AI.
-  </Card>
-  <Card
-    title="Smart Autocomplete"
-    icon="sparkles"
-    href="/features/autocomplete"
-  >
-    Get intelligent suggestions as you type. Press Tab to accept, keep typing to dismiss.
-  </Card>
-  <Card
-    title="Knowledge Base"
-    icon="database"
-    href="/features/knowledge-base"
-  >
-    Upload PDF, Word, or PowerPoint files. The AI searches and references your documents.
-  </Card>
-  <Card
-    title="Image Analysis"
-    icon="image"
-    href="/features/image-analysis"
-  >
-    Upload images for AI to analyze - describe photos, extract text, or understand charts.
-  </Card>
-</CardGroup>
-
-## Who is doXmind for?
+Each document stays in a folder you control. Its portable source and, when present, its hidden sidecar together form the complete editable document. This keeps source files usable in other apps while preserving richer doXmind editor state.
 
 <CardGroup cols={3}>
-  <Card title="Writers & Creators" icon="feather">
-    Draft articles, blog posts, and creative content with AI assistance at every step.
+  <Card title="Markdown" icon="file-lines" href="/markdown/editor">
+    Write in a rich editor while keeping a portable `.md` file.
   </Card>
-  <Card title="Researchers & Academics" icon="graduation-cap">
-    Write papers, analyze sources, and organize research with knowledge base integration.
+  <Card title="PDF" icon="file-pdf" href="/pdf/edit-and-annotate">
+    Read, annotate, edit extracted text, and export a new PDF.
   </Card>
-  <Card title="Business Professionals" icon="briefcase">
-    Create reports, proposals, and documentation with professional polish.
-  </Card>
-</CardGroup>
-
-## Get Started
-
-<CardGroup cols={2}>
-  <Card title="Quick Start Guide" icon="rocket" href="/quickstart">
-    Get up and running with doXmind in 5 minutes
-  </Card>
-  <Card title="Try doXmind" icon="arrow-up-right-from-square" href="https://beta.doxmind.com">
-    Open the app and start writing
+  <Card title="Spreadsheets" icon="table" href="/spreadsheets/workbooks">
+    Work with `.xlsx` sheets, formulas, formatting, filters, and more.
   </Card>
 </CardGroup>
 
-## Need Help?
+## Local by design
+
+- No account is required.
+- There is no cloud sync, hosted document storage, or telemetry.
+- doXmind has no built-in AI runtime.
+- Your files stay where you put them unless you move or export them.
+
+<Note>
+  Update checks contact the release service. When you insert a web bookmark, your Mac directly requests the target page and its preview images. Document editing and storage remain local.
+</Note>
+
+doXmind does not provide cloud sync. If you place a workspace in iCloud Drive, Dropbox, or another synced folder, that provider can still sync the files under its own settings and privacy terms.
+
+## Save and export are different
+
+Markdown saves back to the `.md` file and its sidecar. For PDFs and spreadsheets, **Save** records the editable state in the sidecar; **Export** creates a new PDF or `.xlsx` file with the edits applied. The original PDF or workbook is not overwritten.
+
+## Current availability
+
+The public release currently supports **macOS on Apple silicon**. Windows and Linux installers are not yet available in the public release channel.
 
 <CardGroup cols={2}>
-  <Card
-    title="Email Support"
-    icon="envelope"
-    href="mailto:support@doxmind.com"
-  >
-    Reach out to our support team at support@doxmind.com
+  <Card title="Start in five minutes" icon="arrow-right" href="/quickstart">
+    Install the app, open a folder, and create your first document.
   </Card>
-  <Card
-    title="Visit Website"
-    icon="globe"
-    href="https://www.doxmind.com"
-  >
-    Learn more about doXmind features and updates
+  <Card title="Understand local storage" icon="hard-drive" href="/workspaces/storage-and-sidecars">
+    Learn what doXmind writes beside your files and how to back it up.
   </Card>
 </CardGroup>
