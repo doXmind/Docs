@@ -1,0 +1,33 @@
+# doXmind Documentation
+
+> doXmind is a local-first desktop workspace for Markdown, PDF, and spreadsheets. It requires no account and does not provide cloud document storage, telemetry, or a built-in AI runtime.
+
+## Getting started
+
+- [Introduction](https://docs.doxmind.com/introduction): Product model, privacy, availability, and Save versus Export.
+- [Quickstart](https://docs.doxmind.com/quickstart): Install the Apple silicon macOS app and open a local workspace.
+
+## Workspaces
+
+- [Open files and folders](https://docs.doxmind.com/workspaces/opening-files)
+- [Manage files](https://docs.doxmind.com/workspaces/file-management)
+- [Local storage and sidecars](https://docs.doxmind.com/workspaces/storage-and-sidecars)
+
+## Editors
+
+- [Markdown editor](https://docs.doxmind.com/markdown/editor)
+- [Rich blocks](https://docs.doxmind.com/markdown/rich-blocks)
+- [Save and export Markdown](https://docs.doxmind.com/markdown/save-and-export)
+- [Edit and annotate PDFs](https://docs.doxmind.com/pdf/edit-and-annotate)
+- [Edit spreadsheets](https://docs.doxmind.com/spreadsheets/workbooks)
+
+## Reference
+
+- [Keyboard shortcuts](https://docs.doxmind.com/reference/keyboard-shortcuts)
+- [Supported formats](https://docs.doxmind.com/reference/supported-formats)
+- [Troubleshooting](https://docs.doxmind.com/reference/troubleshooting)
+
+## Product links
+
+- [Download the latest release](https://github.com/doXmind/releases/releases/latest)
+- [doXmind website](https://doxmind.com)

@@ -1,0 +1,30 @@
+# doXmind Documentation — product facts
+
+doXmind is a local-first desktop workspace for writing, reviewing, and organizing Markdown, PDF, and spreadsheet documents. The current public release supports macOS on Apple silicon. No account or sign-in is required.
+
+## Local storage
+
+Documents stay in folders selected by the user. A portable source file and its hidden `.doxmind` sidecar together form the complete editable document. doXmind does not upload documents or provide cloud sync. Workspaces placed in iCloud Drive, Dropbox, or another synced folder can still be uploaded by that provider.
+
+Update checks contact the release service. Inserting a web bookmark directly requests the target page and referenced images from the user's Mac.
+
+## Save and export
+
+- Markdown Save updates the `.md` or `.markdown` source and its sidecar.
+- PDF Save records editable text, free text, and annotations in a hidden sidecar. Export PDF creates a new edited PDF; the original is unchanged.
+- Spreadsheet Save records the editable workbook state in a hidden sidecar. Export XLSX creates a new edited workbook; the original is unchanged.
+
+Keep each source and its sidecar together when moving, restoring, or backing up a document.
+
+## Supported formats
+
+- Stable: `.md`, `.markdown`, `.pdf`, `.xlsx`.
+- Limited: `.xlsm`; VBA macro preservation is not guaranteed on export.
+- Not supported: `.docx`, `.pptx`, and stable CSV editing.
+- Scanned PDFs can be displayed, but doXmind has no OCR for editing image-only text.
+
+The local file import limit is 10 MiB. Workbook parsing is limited to 64 worksheets, 5,000 rows per sheet, and 200 columns per sheet.
+
+## Complete page index
+
+See [llms.txt](https://docs.doxmind.com/llms.txt) for the complete documentation index and page links.
