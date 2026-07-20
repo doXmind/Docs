@@ -1,0 +1,44 @@
+---
+title: "Edit spreadsheets"
+description: "Work locally with Excel workbooks, formulas, formatting, filters, and sheets."
+---
+
+Open an `.xlsx` workbook from a workspace or as a standalone file.
+
+## Cells and formulas
+
+- Select a cell to edit its value in the grid or formula bar.
+- Press `F2` to edit the active cell.
+- Start a formula with `=`.
+- Copy, cut, paste, undo, redo, and drag the fill handle for repeated values or formulas.
+- Press `Cmd+F` to find and replace content in the workbook.
+
+The local formula engine supports many Excel-style formulas but is not a complete Excel compatibility layer. Review formula results and error cells after opening or exporting a complex workbook.
+
+## Format and organize
+
+The workbook editor supports:
+
+- Number, currency, percent, and decimal formats
+- Font emphasis, colors, borders, alignment, rotation, and overflow
+- Merge cells, comments, links, and format painter
+- Sorting, filters, conditional formatting, and data-validation lists
+- Frozen rows or columns and adjustable row heights or column widths
+- Inserting and deleting rows or columns
+- Adding, renaming, duplicating, deleting, and switching worksheets
+
+<Warning>
+  Structural row and column operations do not automatically rewrite every existing formula reference. Review formulas after inserting or deleting rows or columns.
+</Warning>
+
+## Save versus export
+
+**Save** stores the editable workbook state in a hidden sidecar such as `.Budget.xlsx.doxmind` or `.Budget.xlsm.doxmind`. The original workbook is not overwritten.
+
+**Export XLSX** from **More actions (⋯)** creates a new `.xlsx` file with the current edits applied. Save first, wait for the header to show **Saved**, then review the exported copy. Choose a destination if prompted; otherwise check the Downloads folder configured in Settings.
+
+<Note>
+  `.xlsm` files can open through the workbook editor, but VBA macro preservation is not guaranteed on export. Keep a backup and do not rely on doXmind as the only editor for a macro-critical workbook.
+</Note>
+
+See [Local storage and sidecars](/workspaces/storage-and-sidecars) for backup guidance or [Troubleshooting](/reference/troubleshooting) if saved edits appear to be missing.

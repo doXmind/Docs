@@ -1,0 +1,29 @@
+---
+title: "Save and export Markdown"
+description: "Save portable Markdown and export copies for sharing."
+---
+
+## Save
+
+Press `Cmd+S` to update two local files:
+
+1. The `.md` or `.markdown` source receives the portable Markdown content.
+2. The hidden `.doxmind` sidecar receives lossless editor state and rich-block details.
+
+The source file is usable without doXmind. Keep the sidecar when you want the full rich editing state to survive a move, restore, or backup.
+
+## Export Markdown
+
+Use **Export Markdown** to create a copy of the current portable Markdown. This is useful when you want to hand off a clean source file without changing the working document.
+
+## Export PDF
+
+Use **Export PDF** from **More actions (⋯)** to create a PDF copy of the rendered document. Choose a destination if prompted; otherwise check the Downloads folder configured in Settings.
+
+<Note>
+  Exporting creates a copy. It does not replace the open Markdown document or its sidecar.
+</Note>
+
+## External edits
+
+If the Markdown file changes outside doXmind, the external text becomes authoritative. doXmind rebuilds the rich editor state and refreshes the sidecar on the next save.

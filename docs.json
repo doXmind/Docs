@@ -1,0 +1,106 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "doXmind",
+  "colors": {
+    "primary": "#111111",
+    "light": "#333333",
+    "dark": "#F2F2F2"
+  },
+  "favicon": "/logo/favicon.svg",
+  "navigation": {
+    "anchors": [
+      {
+        "anchor": "Documentation",
+        "icon": "book-open",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "introduction",
+              "quickstart"
+            ]
+          },
+          {
+            "group": "Workspaces",
+            "pages": [
+              "workspaces/opening-files",
+              "workspaces/file-management",
+              "workspaces/storage-and-sidecars"
+            ]
+          },
+          {
+            "group": "Markdown",
+            "pages": [
+              "markdown/editor",
+              "markdown/rich-blocks",
+              "markdown/save-and-export"
+            ]
+          },
+          {
+            "group": "PDF",
+            "pages": [
+              "pdf/edit-and-annotate"
+            ]
+          },
+          {
+            "group": "Spreadsheets",
+            "pages": [
+              "spreadsheets/workbooks"
+            ]
+          },
+          {
+            "group": "Reference",
+            "pages": [
+              "reference/keyboard-shortcuts",
+              "reference/supported-formats",
+              "reference/troubleshooting"
+            ]
+          }
+        ]
+      }
+    ],
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Download",
+          "href": "https://github.com/doXmind/releases/releases/latest",
+          "icon": "download"
+        },
+        {
+          "anchor": "Website",
+          "href": "https://doxmind.com",
+          "icon": "globe"
+        }
+      ]
+    }
+  },
+  "logo": {
+    "light": "/logo/logo-light.svg",
+    "dark": "/logo/logo-dark.svg"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Website",
+        "href": "https://doxmind.com"
+      },
+      {
+        "label": "Releases",
+        "href": "https://github.com/doXmind/releases/releases/latest"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Download for Apple silicon",
+      "href": "https://github.com/doXmind/releases/releases/latest/download/doXmind-mac-arm64.dmg"
+    }
+  },
+  "footer": {
+    "socials": {
+      "x": "https://x.com/doxmind",
+      "github": "https://github.com/doxmind",
+      "linkedin": "https://www.linkedin.com/company/doxmind"
+    }
+  }
+}

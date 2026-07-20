@@ -1,0 +1,36 @@
+---
+title: "Supported formats"
+description: "See which document types the current desktop release can open and edit."
+---
+
+## Stable document types
+
+| Format | Open | Edit | Save behavior |
+| --- | --- | --- | --- |
+| `.md`, `.markdown` | Yes | Yes | Updates the Markdown source and sidecar |
+| `.pdf` | Yes | Annotations; existing text when extractable | Saves edits to a sidecar; export creates a new PDF |
+| `.xlsx` | Yes | Yes | Saves edits to a sidecar; export creates a new workbook |
+
+## Limited support
+
+| Format | Current behavior |
+| --- | --- |
+| `.xlsm` | Opens in the workbook editor, but VBA preservation is not guaranteed on export |
+
+## Not currently supported
+
+- `.docx` and `.pptx` are not supported workspace documents.
+- CSV support is under development and is not part of the stable release. Convert CSV files to `.xlsx` before opening them.
+- Scanned PDFs can be displayed, but doXmind has no OCR for extracting editable text.
+
+## Size limits
+
+The local file import limit is 10 MiB. Workbook parsing is also limited to 64 worksheets, 5,000 rows per sheet, and 200 columns per sheet.
+
+Split very large inputs before opening them when possible.
+
+## Compatibility notes
+
+- The spreadsheet formula engine is not a complete Excel implementation. Review complex formulas after export.
+- Structural spreadsheet edits may require manual formula updates.
+- Rich Markdown details without a direct portable equivalent depend on the hidden sidecar.

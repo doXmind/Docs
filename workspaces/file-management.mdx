@@ -1,0 +1,34 @@
+---
+title: "Manage files"
+description: "Create, rename, move, delete, and restore local documents safely."
+---
+
+The workspace sidebar manages real files and folders on your Mac. Changes made there are reflected in Finder.
+
+## Create and organize
+
+Use the **New** menu in the sidebar to create documents and folders. You can rename or move items within the current workspace; doXmind moves the matching sidecar with its source file.
+
+## Work with external editors
+
+Markdown files remain portable text files, so you can edit them in another app. When doXmind detects that the Markdown source changed outside the app, the external Markdown is treated as authoritative and the editor state is rebuilt on the next save.
+
+<Warning>
+  Avoid editing the same document in doXmind and another app at the same time. The last save can overwrite newer work.
+</Warning>
+
+## Delete and restore
+
+Deleting a document from doXmind moves the source and its sidecar to the macOS Trash as separate items. doXmind does not maintain a separate in-app Trash.
+
+To restore a document:
+
+1. Open the macOS Trash.
+2. Press `Cmd+Shift+.` if hidden files are not visible.
+3. Restore both the source file and its matching `.doxmind` sidecar to the same folder.
+
+Restoring only a PDF or spreadsheet source loses edits that were saved only in its sidecar. Restoring only Markdown text can lose rich editor details that do not have a portable Markdown equivalent.
+
+## Back up a workspace
+
+Back up the complete folder, including hidden files. Finder can show hidden files with `Cmd+Shift+.`. See [Local storage and sidecars](/workspaces/storage-and-sidecars) for exact filenames.
