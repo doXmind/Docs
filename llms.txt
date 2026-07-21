@@ -1,25 +1,28 @@
 # doXmind Documentation
 
-> doXmind is a local-first desktop workspace for Markdown, PDF, and spreadsheets. It requires no account and does not provide cloud document storage, telemetry, or a built-in AI runtime.
+> doXmind is a fully local, Markdown-native knowledge workspace. Markdown Pages are the only editable content type. PDF, spreadsheet, and HTML files are read-only Attachments. No account is required, and doXmind does not provide cloud document storage, telemetry, or a built-in AI runtime.
 
 ## Getting started
 
-- [Introduction](https://docs.doxmind.com/introduction): Product model, privacy, availability, and Save versus Export.
-- [Quickstart](https://docs.doxmind.com/quickstart): Install the Apple silicon macOS app and open a local workspace.
+- [Introduction](https://docs.doxmind.com/introduction): Product boundary, privacy, Pages, Attachments, and legacy recovery.
+- [Quickstart](https://docs.doxmind.com/quickstart): Install the Apple silicon macOS app, open a local workspace, and create a Page.
 
 ## Workspaces
 
 - [Open files and folders](https://docs.doxmind.com/workspaces/opening-files)
-- [Manage files](https://docs.doxmind.com/workspaces/file-management)
+- [Manage Pages and Attachments](https://docs.doxmind.com/workspaces/file-management)
 - [Local storage and sidecars](https://docs.doxmind.com/workspaces/storage-and-sidecars)
 
-## Editors
+## Pages
 
-- [Markdown editor](https://docs.doxmind.com/markdown/editor)
+- [Markdown Pages](https://docs.doxmind.com/markdown/editor)
 - [Rich blocks](https://docs.doxmind.com/markdown/rich-blocks)
 - [Save and export Markdown](https://docs.doxmind.com/markdown/save-and-export)
-- [Edit and annotate PDFs](https://docs.doxmind.com/pdf/edit-and-annotate)
-- [Edit spreadsheets](https://docs.doxmind.com/spreadsheets/workbooks)
+
+## Attachments and recovery
+
+- [PDF Attachments and legacy recovery](https://docs.doxmind.com/attachments/pdf)
+- [Spreadsheet Attachments and legacy recovery](https://docs.doxmind.com/attachments/spreadsheets)
 
 ## Reference
 

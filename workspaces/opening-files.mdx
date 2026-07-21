@@ -1,9 +1,9 @@
 ---
 title: "Open files and folders"
-description: "Choose a folder workspace, open a standalone file, or create a new document."
+description: "Choose a folder workspace, open a standalone Page or Attachment, or create a new Markdown Page."
 ---
 
-doXmind works directly with documents on your Mac. You can open a folder for an ongoing project or open one file for a focused task.
+doXmind works directly with files on your Mac. You can open a folder for an ongoing project or open one supported file for a focused task.
 
 ## Open a folder workspace
 
@@ -11,35 +11,35 @@ Choose **Open Folder** on the welcome screen, or press `Cmd+Shift+O`.
 
 A folder workspace gives you:
 
-- A sidebar for supported files and subfolders
-- Tools to create, rename, move, and delete documents
-- Quick switching between open documents
-- Local page links between Markdown documents
+- A sidebar for Markdown Pages, supported Attachments, and subfolders
+- Tools to create and organize Pages and folders
+- Quick switching between open files
+- Portable links between Markdown Pages
 
 doXmind works within the folder you select and its subfolders. If you need access to a different project, open that folder as a new workspace.
 
 ## Open one file
 
-Choose **Open File**, or press `Cmd+O`, to work on a standalone Markdown, PDF, or supported workbook file. doXmind creates any required sidecar next to that file.
+Choose **File → Open File…**, or press `Cmd+O`, to open a standalone Markdown Page or supported Attachment. You can also drag a supported file onto the welcome screen or open it with doXmind from Finder. A normal Attachment opens read-only and does not receive a new sidecar. If legacy recovery evidence already exists, doXmind inspects it without rewriting it.
 
-## Create a new document
+## Create a new Page
 
-Press `Cmd+N` to create a Markdown document. In a folder workspace, the sidebar can also create:
+Press `Cmd+N` to create a Page. In a folder workspace, the sidebar **+** menu can create:
 
-- Blank Markdown documents
-- Markdown documents from a template
-- Blank PDFs
-- Blank Excel workbooks
+- Blank Markdown Pages
+- Pages from a template
 - Folders
 
-## Switch between documents
+doXmind does not create blank PDFs or workbooks.
 
-Press `Cmd+P` from the native Edit menu to open the quick file switcher. The app also assigns `Cmd+Tab`; macOS may use that combination for application switching. You can always select a file from the sidebar or recent documents list.
+## Switch between files
+
+Press `Cmd+P` from the native Edit menu to open the quick file switcher. The app also assigns `Cmd+Tab`; macOS may use that combination for application switching. You can always select a file from the sidebar or recent files list.
 
 <Tip>
   Use `Cmd+Option+R` to reveal the current source file in Finder.
 </Tip>
 
-## Supported files
+## Supported workspace files
 
-The stable editing formats are `.md`, `.markdown`, `.pdf`, and `.xlsx`. Macro-enabled `.xlsm` files have limited support. See [Supported formats](/reference/supported-formats) for details.
+`.md` and `.markdown` are editable Pages. PDF, spreadsheet (`.xlsx`, `.xlsm`, `.csv`), and HTML (`.html`, `.htm`) files are read-only Attachments. Standalone images, DOCX, PPTX, and arbitrary other extensions are not promised as workspace documents. See [Supported formats](/reference/supported-formats) for details.

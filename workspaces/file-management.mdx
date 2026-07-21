@@ -1,34 +1,36 @@
 ---
-title: "Manage files"
-description: "Create, rename, move, delete, and restore local documents safely."
+title: "Manage Pages and Attachments"
+description: "Create and organize local Markdown Pages while preserving read-only Attachments and recovery evidence."
 ---
 
-The workspace sidebar manages real files and folders on your Mac. Changes made there are reflected in Finder.
+The workspace sidebar mirrors supported files and folders on your Mac. It is not a general-purpose file browser, and its actions differ for Pages and Attachments.
 
 ## Create and organize
 
-Use the **New** menu in the sidebar to create documents and folders. You can rename or move items within the current workspace; doXmind moves the matching sidecar with its source file.
+Use the **+** menu in the sidebar to create a Page, a Page from a template, or a folder. You can rename or move Pages and folders within the workspace; doXmind keeps each Page sidecar with its Markdown source.
+
+Ordinary Attachment file-management actions are limited to **Open Externally** and **Reveal**. When supported legacy evidence is detected, the Attachment view can also offer a separate recovery attempt that downloads an unverified comparison copy; it still does not mount an editor or change the existing files. doXmind does not offer direct Attachment move, rename, delete, or same-name replacement, whether or not legacy recovery evidence exists. Moving or renaming a parent folder keeps its complete subtree together. Deleting a folder that contains an Attachment or recovery evidence is blocked.
 
 ## Work with external editors
 
 Markdown files remain portable text files, so you can edit them in another app. When doXmind detects that the Markdown source changed outside the app, the external Markdown is treated as authoritative and the editor state is rebuilt on the next save.
 
 <Warning>
-  Avoid editing the same document in doXmind and another app at the same time. The last save can overwrite newer work.
+  Avoid editing the same Page in doXmind and another app at the same time. The last save can overwrite newer work.
 </Warning>
 
 ## Delete and restore
 
-Deleting a document from doXmind moves the source and its sidecar to the macOS Trash as separate items. doXmind does not maintain a separate in-app Trash.
+Deleting a Page from doXmind moves its Markdown source and sidecar to the macOS Trash as separate items. Attachment deletion is not offered in doXmind. doXmind does not maintain a separate in-app Trash.
 
-To restore a document:
+To restore a Page:
 
 1. Open the macOS Trash.
 2. Press `Cmd+Shift+.` if hidden files are not visible.
-3. Restore both the source file and its matching `.doxmind` sidecar to the same folder.
+3. Restore the Markdown source and its matching `.doxmind` sidecar to the same folder.
 
-Restoring only a PDF or spreadsheet source loses edits that were saved only in its sidecar. Restoring only Markdown text can lose rich editor details that do not have a portable Markdown equivalent.
+Restoring only Markdown text preserves the Page's portable meaning but can lose rich editor details that have no exact Markdown equivalent. If an older release created PDF or spreadsheet edit state, restore the source, main sidecar, every `.bak`, `.lock`, and `.corrupt-*` file as one evidence set.
 
 ## Back up a workspace
 
-Back up the complete folder, including hidden files. Finder can show hidden files with `Cmd+Shift+.`. See [Local storage and sidecars](/workspaces/storage-and-sidecars) for exact filenames.
+Back up the complete folder, including hidden files. Finder can show hidden files with `Cmd+Shift+.`. Do not delete legacy recovery evidence after an attempt merely because a new copy was produced. See [Local storage and sidecars](/workspaces/storage-and-sidecars) for exact filenames.

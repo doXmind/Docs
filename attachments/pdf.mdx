@@ -1,0 +1,72 @@
+---
+title: "PDF Attachments and legacy recovery"
+description: "Open PDFs as read-only Attachments and recover eligible edits saved by older doXmind releases."
+---
+
+PDF editing and annotation are no longer product surfaces. A PDF opens as a read-only **Attachment**; the old PDF editor is not mounted.
+
+## Work with an ordinary PDF
+
+- Choose **Open Externally** to read or edit the PDF in its system application.
+- Choose **Reveal** to locate the source in Finder.
+- doXmind does not create a sidecar, save annotations, or rewrite the source.
+
+The current Attachment surface does not include an embedded PDF preview.
+
+## Why recovery still appears
+
+Older doXmind releases could save extracted-text edits, free text, highlights, and related editor state in a hidden sidecar such as `.Report.pdf.doxmind`. That historical state remains user data.
+
+Current releases inspect the main legacy sidecar and `.bak` independently without mounting the old editor or migrating, rewriting, renaming, or deleting any evidence. Recovery exists only to keep older edits reachable; it does not reintroduce PDF editing.
+
+## Attempt recovery in the current app
+
+If supported evidence is found:
+
+1. Select **Attempt PDF recovery**. If the main sidecar and backup contain different saved states, choose **Attempt main sidecar** or **Attempt backup**.
+2. doXmind hashes the exact PDF bytes used for the attempt and requires a matching historical cache hash.
+3. The isolated bridge applies the selected state all-or-nothing and starts a new comparison-copy download with `<name> recovered.pdf` as the suggested filename.
+4. Confirm the destination and final filename in the desktop download flow, then compare the copy with the original before using it.
+
+doXmind does not decide same-name download collisions itself. If the suggested filename already exists, choose a different name or location; never replace an earlier recovery output or any original evidence.
+
+<Warning>
+  Every recovered copy is unverified. A matching historical cache hash is a mismatch guard, not proof that the edits belong to that exact source version.
+</Warning>
+
+The attempt stops instead of producing a partial file when it encounters unsupported page rotations, source-text mismatches, text that would require silent resizing, or other unapplied state. Apart from the newly created recovered copy, the source PDF and matching main sidecar, every `.bak`, `.lock`, and `.corrupt-*` file remain byte-for-byte unchanged, with their directory membership, inodes, and mtimes preserved. Opening the containing workspace may create or refresh disposable `.doxmind/index.json` metadata; that file is not recovery evidence.
+
+## Preserve the complete evidence set
+
+Keep these files together even after an attempt succeeds:
+
+- The original PDF
+- The main hidden `.doxmind` sidecar
+- Every matching `.bak`
+- Every matching `.lock`
+- Every matching `.corrupt-*` forensic copy
+
+Do not move a backup over the main sidecar, delete small lock files, or allow a cleanup tool to remove hidden evidence.
+
+## Verified 1.7.8 compatibility fallback
+
+If the current app cannot offer or complete recovery, do not choose an older build by guesswork. The fallback below was verified only for schema-v2 PDF and workbook sidecars created and reopened by doXmind 1.7.8. It does not prove compatibility with earlier shapes, corrupt evidence, source mismatches, or every backup.
+
+| Item | Verified value |
+| --- | --- |
+| Version | doXmind `1.7.8`, macOS arm64 |
+| Artifact | [Official 1.7.8 ZIP](https://github.com/doXmind/releases/releases/download/v1.7.8/doXmind-1.7.8-arm64-mac.zip) |
+| SHA-256 | `08aff3948166824089b1a9b5b6964868af442372e3ae240360c3aa78f9c5b9e3` |
+| Validation record | [1.8.0 legacy fallback validation](https://github.com/doXmind/doXmind-app/blob/b4de3cbc1cae15724a166fa1aa8850a0545944db/docs/releases/1.8.0-legacy-validation.md) |
+
+The old build rewrites sidecar metadata and creates workspace metadata while opening and exporting. Run it only against a complete duplicate:
+
+doXmind cannot prove which historical app version wrote a sidecar. The current **Attempt PDF recovery** action does not certify fallback eligibility, and a top-level `"version": 2` value identifies the schema but does not prove 1.7.8 provenance. Proceed only if your own records establish that 1.7.8 created and reopened the evidence; otherwise stop and preserve it. See [Troubleshooting](/reference/troubleshooting) for the exact checksum-verification steps.
+
+1. Quit every doXmind process.
+2. Duplicate the Attachment's containing folder into an isolated recovery location and confirm the full evidence set is present.
+3. Download only the artifact above and verify its SHA-256.
+4. Extract and run it from a temporary location. Open only the isolated copy—never the original workspace.
+5. Export a new file, compare it with the original Attachment, and keep the untouched evidence until the result is independently verified and archived.
+
+If the evidence origin is unknown or outside the validated scope, stop after preserving it.

@@ -1,6 +1,7 @@
 # doXmind Documentation
 
-Official documentation for [doXmind](https://doxmind.com), a local-first desktop workspace for Markdown, PDF, and spreadsheets.
+Official documentation for [doXmind](https://doxmind.com), a fully local,
+Markdown-native knowledge workspace.
 
 **Read the documentation:** [docs.doxmind.com](https://docs.doxmind.com)
 
@@ -8,9 +9,9 @@ Official documentation for [doXmind](https://doxmind.com), a local-first desktop
 
 - Getting started and installation
 - Workspaces, files, and local storage
-- Markdown editing and export
-- PDF editing and annotation
-- Spreadsheet editing
+- Markdown Page editing and export
+- Read-only PDF, spreadsheet, and HTML Attachments
+- Recovery of PDF and spreadsheet edits saved by older releases
 - Shortcuts, supported formats, and troubleshooting
 
 ## Links
