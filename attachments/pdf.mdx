@@ -34,7 +34,7 @@ doXmind does not decide same-name download collisions itself. If the suggested f
   Every recovered copy is unverified. A matching historical cache hash is a mismatch guard, not proof that the edits belong to that exact source version.
 </Warning>
 
-The attempt stops instead of producing a partial file when it encounters unsupported page rotations, source-text mismatches, text that would require silent resizing, or other unapplied state. Apart from the newly created recovered copy, the source PDF, main sidecar, `.bak`, `.lock`, every `.corrupt-*` file, their mtimes, and the other surrounding directory contents remain unchanged.
+The attempt stops instead of producing a partial file when it encounters unsupported page rotations, source-text mismatches, text that would require silent resizing, or other unapplied state. Apart from the newly created recovered copy, the source PDF and matching main sidecar, every `.bak`, `.lock`, and `.corrupt-*` file remain byte-for-byte unchanged, with their directory membership, inodes, and mtimes preserved. Opening the containing workspace may create or refresh disposable `.doxmind/index.json` metadata; that file is not recovery evidence.
 
 ## Preserve the complete evidence set
 
@@ -57,7 +57,7 @@ If the current app cannot offer or complete recovery, do not choose an older bui
 | Version | doXmind `1.7.8`, macOS arm64 |
 | Artifact | [Official 1.7.8 ZIP](https://github.com/doXmind/releases/releases/download/v1.7.8/doXmind-1.7.8-arm64-mac.zip) |
 | SHA-256 | `08aff3948166824089b1a9b5b6964868af442372e3ae240360c3aa78f9c5b9e3` |
-| Validation record | [1.8.0 legacy fallback validation](https://github.com/doXmind/doXmind-app/blob/main/docs/releases/1.8.0-legacy-validation.md) |
+| Validation record | [1.8.0 legacy fallback validation](https://github.com/doXmind/doXmind-app/blob/b4de3cbc1cae15724a166fa1aa8850a0545944db/docs/releases/1.8.0-legacy-validation.md) |
 
 The old build rewrites sidecar metadata and creates workspace metadata while opening and exporting. Run it only against a complete duplicate:
 
