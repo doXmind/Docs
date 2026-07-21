@@ -8,6 +8,18 @@
     "dark": "#F2F2F2"
   },
   "favicon": "/logo/favicon.svg",
+  "redirects": [
+    {
+      "source": "/pdf/edit-and-annotate",
+      "destination": "/attachments/pdf",
+      "permanent": true
+    },
+    {
+      "source": "/spreadsheets/workbooks",
+      "destination": "/attachments/spreadsheets",
+      "permanent": true
+    }
+  ],
   "navigation": {
     "anchors": [
       {
@@ -30,7 +42,7 @@
             ]
           },
           {
-            "group": "Markdown",
+            "group": "Pages",
             "pages": [
               "markdown/editor",
               "markdown/rich-blocks",
@@ -38,15 +50,10 @@
             ]
           },
           {
-            "group": "PDF",
+            "group": "Attachments and recovery",
             "pages": [
-              "pdf/edit-and-annotate"
-            ]
-          },
-          {
-            "group": "Spreadsheets",
-            "pages": [
-              "spreadsheets/workbooks"
+              "attachments/pdf",
+              "attachments/spreadsheets"
             ]
           },
           {

@@ -1,29 +1,42 @@
 # doXmind Documentation — product facts
 
-doXmind is a local-first desktop workspace for writing, reviewing, and organizing Markdown, PDF, and spreadsheet documents. The current public release supports macOS on Apple silicon. No account or sign-in is required.
+doXmind is a fully local, Markdown-native knowledge workspace. Markdown Pages are the only first-class editable content type. The current public channel supports macOS on Apple silicon. No account or sign-in is required.
+
+## Product boundary
+
+- A Page is backed by `.md` or `.markdown` and opens in the rich editor.
+- PDF, spreadsheet (`.xlsx`, `.xlsm`, `.csv`), and HTML files are read-only Attachments.
+- Ordinary Attachments offer Open Externally and Reveal. Eligible legacy PDF or spreadsheet evidence can also expose a separate recovery attempt. Attachments do not mount a doXmind editor or embedded document preview.
+- Current releases do not create blank PDFs or workbooks, write new Attachment edit state, or rewrite an Attachment source.
+- Standalone images, DOCX, PPTX, and arbitrary extensions are not promised as workspace documents. Images inserted into Pages remain local Markdown assets.
 
 ## Local storage
 
-Documents stay in folders selected by the user. A portable source file and its hidden `.doxmind` sidecar together form the complete editable document. doXmind does not upload documents or provide cloud sync. Workspaces placed in iCloud Drive, Dropbox, or another synced folder can still be uploaded by that provider.
+The user's workspace folder is the source of truth. Saving a Page updates the portable Markdown source and a same-name hidden `.doxmind` sidecar that holds lossless editor HTML and replaceable UI state. The Page remains meaningful without that sidecar.
 
-Update checks contact the release service. Inserting a web bookmark directly requests the target page and referenced images from the user's Mac.
+When a Page sidecar is missing, opening imports the Markdown source into the editor without creating a sidecar. The first actual content edit and save creates one; an unchanged save does not. Rich details absent from the Markdown cannot be reconstructed.
 
-## Save and export
+Opening an ordinary Attachment creates no sidecar. Legacy PDF and spreadsheet sidecars created by older releases remain recovery evidence and must not be deleted, overwritten, or mistaken for current editor state.
 
-- Markdown Save updates the `.md` or `.markdown` source and its sidecar.
-- PDF Save records editable text, free text, and annotations in a hidden sidecar. Export PDF creates a new edited PDF; the original is unchanged.
-- Spreadsheet Save records the editable workbook state in a hidden sidecar. Export XLSX creates a new edited workbook; the original is unchanged.
+doXmind does not upload documents or provide cloud sync. Workspaces placed in iCloud Drive, Dropbox, or another synced folder can still be uploaded by that provider. Update checks contact the release service. Inserting a web bookmark directly requests the target page and referenced images from the user's Mac.
 
-Keep each source and its sidecar together when moving, restoring, or backing up a document.
+## Page save and export
 
-## Supported formats
+- Save updates the `.md` or `.markdown` source and its sidecar.
+- Export Markdown creates a portable Markdown copy.
+- Export PDF renders the current Markdown Page to a new PDF copy.
 
-- Stable: `.md`, `.markdown`, `.pdf`, `.xlsx`.
-- Limited: `.xlsm`; VBA macro preservation is not guaranteed on export.
-- Not supported: `.docx`, `.pptx`, and stable CSV editing.
-- Scanned PDFs can be displayed, but doXmind has no OCR for editing image-only text.
+PDF output from a Page does not make PDF an editable workspace type.
 
-The local file import limit is 10 MiB. Workbook parsing is limited to 64 worksheets, 5,000 rows per sheet, and 200 columns per sheet.
+## Legacy PDF and spreadsheet recovery
+
+Older releases could save PDF annotations/text edits or workbook edits in hidden sidecars. Current releases inspect the main sidecar and `.bak` independently without mounting the old editors or rewriting recovery evidence.
+
+An eligible recovery attempt is explicit, all-or-nothing, and unverified. It requires a matching historical cache hash as a mismatch guard, starts a new comparison-copy download with `<name> recovered.pdf` or `<name> recovered.xlsx` as the suggested filename, and preserves the original source, main sidecar, every `.bak`, `.lock`, and `.corrupt-*` file. The app does not decide same-name download collisions; users must choose a different name or location rather than overwrite earlier outputs or evidence. A hash match does not prove historical editor provenance.
+
+Recovery refuses unsupported or unapplied state instead of silently producing a partial file. CSV and XLSM recovery output is `.xlsx`; VBA macros are not included.
+
+When the current bridge cannot recover evidence, the only verified compatibility fallback is the official doXmind 1.7.8 macOS arm64 ZIP with SHA-256 `08aff3948166824089b1a9b5b6964868af442372e3ae240360c3aa78f9c5b9e3`. It was validated only for schema-v2 PDF and workbook sidecars created and reopened by 1.7.8. A top-level `version: 2` value does not prove that provenance. The old build rewrites sidecars, so it must run only against a complete isolated duplicate, never the original workspace.
 
 ## Complete page index
 

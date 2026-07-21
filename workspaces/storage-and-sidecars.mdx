@@ -1,36 +1,39 @@
 ---
 title: "Local storage and sidecars"
-description: "Understand the hidden files doXmind keeps beside your documents."
+description: "Understand Markdown Page sidecars and preserve legacy Attachment recovery evidence."
 ---
 
-Your source files stay in the folders you choose. doXmind stores editor-only state in hidden JSON sidecars beside those files. The source and its current sidecar together are the complete editable document.
+Your source files stay in the folders you choose. A Markdown Page has a same-name hidden JSON sidecar for lossless editor HTML and replaceable UI state. The Markdown source remains authoritative and readable without that sidecar.
+
+If a Page sidecar is missing, opening the Page imports the Markdown source into the rich editor without creating a sidecar. The first actual content edit and save creates a fresh sidecar from the current editor state; simply opening the Page or pressing `Cmd+S` without a content change does not. Rich details that had no exact Markdown representation cannot be reconstructed from the source alone.
 
 ```text
 Project/
 ├── Project Plan.md
 ├── .Project Plan.doxmind
+├── Reference.html                  # ordinary Attachment; no sidecar
 ├── Research Report.pdf
-├── .Research Report.pdf.doxmind
+├── .Research Report.pdf.doxmind   # legacy recovery evidence
 ├── Quarterly Plan.xlsx
-└── .Quarterly Plan.xlsx.doxmind
+└── .Quarterly Plan.xlsx.doxmind  # legacy recovery evidence
 ```
 
 ## What each file contains
 
-| Document | Portable source | Hidden sidecar |
+| Item | Source of truth | Hidden sidecar |
 | --- | --- | --- |
-| Markdown | The document text in `.md` or `.markdown` | Lossless rich-editor HTML and doXmind-only block details |
-| PDF | The original `.pdf` | Editable PDF state and annotations |
-| Spreadsheet | The original `.xlsx` | Workbook editing state |
+| Markdown Page | The document text in `.md` or `.markdown` | Lossless rich-editor HTML and replaceable doXmind-only state |
+| Ordinary Attachment | The original PDF, spreadsheet, or HTML file | None is created by current releases |
+| Legacy PDF or spreadsheet | The original Attachment | Historical edit state created by an older release; recovery evidence only |
 
-For Markdown, the filename extension is removed from the sidecar name. For PDF and spreadsheet files, the source extension remains part of the sidecar name.
+For a Markdown Page, the filename extension is removed from the sidecar name. Older PDF and spreadsheet sidecars retain the source extension in their names.
 
 ## Keep source and sidecar together
 
-Move, copy, restore, and back up both files. The app does this automatically when you manage documents from the workspace sidebar. If you use Finder or another tool, include the hidden sidecar yourself.
+Keep a Page and its sidecar together when you want full editor fidelity. The app does this automatically when you manage Pages from the workspace sidebar. If you use Finder or another tool, include the hidden sidecar yourself.
 
 <Warning>
-  Do not manually edit or delete `.doxmind` sidecars. For PDFs and spreadsheets, removing a sidecar removes saved edits that have not been exported.
+  If an older release created a PDF or spreadsheet sidecar, keep the source, sidecar, `.bak`, `.lock`, and `.corrupt-*` files together. Current recovery attempts never make those files disposable.
 </Warning>
 
 ## Other local files
@@ -41,7 +44,7 @@ Move, copy, restore, and back up both files. The app does this automatically whe
 - A `<sidecar>.corrupt-*` file preserves unreadable data for recovery.
 - App-level settings and metadata live under `~/.doxmind`, separately from document content.
 
-For an everyday backup, preserve the full workspace folder, including hidden files. If a migration error tells you to restore a `.bak`, close doXmind first and follow the exact recovery path shown by the app. Preserve the current sidecar before replacing it, and confirm that the backup belongs to the same source document.
+For an everyday backup, preserve the full workspace folder, including hidden files. The current recovery flow inspects only the main legacy sidecar and `.bak`; it does not consume `.lock` or `.corrupt-*` evidence. Do not move a backup over the main sidecar before an attempt, and do not manually replace or delete evidence.
 
 ## Privacy and network access
 

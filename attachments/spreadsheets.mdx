@@ -1,0 +1,74 @@
+---
+title: "Spreadsheet Attachments and legacy recovery"
+description: "Open workbooks as read-only Attachments and recover eligible edits saved by older doXmind releases."
+---
+
+Spreadsheet editing is no longer a product surface. `.xlsx`, `.xlsm`, and `.csv` files open as read-only **Attachments**; the old workbook editor, formula engine, formatting tools, and sheet controls are not mounted.
+
+## Work with an ordinary spreadsheet
+
+- Choose **Open Externally** to read or edit the file in its system application.
+- Choose **Reveal** to locate the source in Finder.
+- doXmind does not create a sidecar, save workbook edits, or rewrite the source.
+
+The current Attachment surface does not include an embedded workbook preview.
+
+## Why recovery still appears
+
+Older doXmind releases could save cell values, formulas, formatting, sheets, and related editor state in a hidden sidecar such as `.Budget.xlsx.doxmind`. That historical state remains user data.
+
+Current releases inspect the main legacy sidecar and `.bak` independently without mounting the old editor or invoking its reader, writer, migration, or cache path. Recovery exists only to keep older edits reachable; it does not reintroduce spreadsheet editing.
+
+## Attempt recovery in the current app
+
+If supported evidence is found:
+
+1. Select **Attempt spreadsheet recovery**. If the main sidecar and backup contain different saved states, choose the candidate you want to attempt.
+2. doXmind hashes the exact source bytes and requires a matching historical cache hash.
+3. The isolated bridge applies the selected state all-or-nothing and starts a new comparison-copy download with `<name> recovered.xlsx` as the suggested filename.
+4. Confirm the destination and final filename in the desktop download flow, then compare the copy with the original before using it.
+
+doXmind does not decide same-name download collisions itself. If the suggested filename already exists, choose a different name or location; never replace an earlier recovery output or any original evidence.
+
+<Warning>
+  Every recovered copy is unverified. A matching historical cache hash is a mismatch guard, not proof that the edits belong to that exact source version.
+</Warning>
+
+Recovery stops rather than silently dropping unsupported or unapplied state. Missing sheets, malformed targets, missing or mismatched cache hashes, saved `filters` or `filterMode`, unsupported structural row/column/merge operations, lossy sheet operations, and UI-only metadata can block an attempt.
+
+CSV recovery produces `.xlsx`. For an `.xlsm` source, the recovered output is `.xlsx` and does not include VBA macros.
+
+## Preserve the complete evidence set
+
+Keep these files together even after an attempt succeeds:
+
+- The original `.xlsx`, `.xlsm`, or `.csv` source
+- The main hidden `.doxmind` sidecar
+- Every matching `.bak`
+- Every matching `.lock`
+- Every matching `.corrupt-*` forensic copy
+
+Do not move a backup over the main sidecar, delete small lock files, or allow a cleanup tool to remove hidden evidence.
+
+## Verified 1.7.8 compatibility fallback
+
+If the current app cannot offer or complete recovery, do not choose an older build by guesswork. The fallback below was verified only for schema-v2 PDF and workbook sidecars created and reopened by doXmind 1.7.8. The tested workbook had saved cell edits but no historical `sourceHash`, so the current app correctly refused direct recovery and the isolated fallback was required.
+
+| Item | Verified value |
+| --- | --- |
+| Version | doXmind `1.7.8`, macOS arm64 |
+| Artifact | [Official 1.7.8 ZIP](https://github.com/doXmind/releases/releases/download/v1.7.8/doXmind-1.7.8-arm64-mac.zip) |
+| SHA-256 | `08aff3948166824089b1a9b5b6964868af442372e3ae240360c3aa78f9c5b9e3` |
+| Validation record | [1.8.0 legacy fallback validation](https://github.com/doXmind/doXmind-app/blob/main/docs/releases/1.8.0-legacy-validation.md) |
+
+The old build rewrites sidecar metadata and creates workspace metadata while opening and exporting. Run it only against a complete duplicate:
+
+doXmind cannot prove which historical app version wrote a sidecar. The current **Attempt spreadsheet recovery** action does not certify fallback eligibility, and a top-level `"version": 2` value identifies the schema but does not prove 1.7.8 provenance. Proceed only if your own records establish that 1.7.8 created and reopened the evidence; otherwise stop and preserve it. See [Troubleshooting](/reference/troubleshooting) for the exact checksum-verification steps.
+
+1. Quit every doXmind process.
+2. Duplicate the Attachment's containing folder into an isolated recovery location and confirm the full evidence set is present.
+3. Download only the artifact above and verify its SHA-256.
+4. Extract and run it from a temporary location. Open only the isolated copy—never the original workspace.
+5. Export a new file, compare it with the original Attachment, and keep the untouched evidence until the result is independently verified and archived.
+
+This validation does not cover older sidecar shapes, corrupt evidence, unknown origins, source mismatches, or every backup. If the evidence falls outside the validated scope, stop after preserving it.
