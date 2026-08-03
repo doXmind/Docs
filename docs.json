@@ -38,14 +38,9 @@
             ]
           },
           {
-            "group": "PDF",
+            "group": "Attachments and recovery",
             "pages": [
-              "pdf/edit-and-annotate"
-            ]
-          },
-          {
-            "group": "Spreadsheets",
-            "pages": [
+              "pdf/edit-and-annotate",
               "spreadsheets/workbooks"
             ]
           },
@@ -54,7 +49,8 @@
             "pages": [
               "reference/keyboard-shortcuts",
               "reference/supported-formats",
-              "reference/troubleshooting"
+              "reference/troubleshooting",
+              "reference/whats-new"
             ]
           }
         ]

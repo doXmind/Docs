@@ -1,36 +1,34 @@
 ---
 title: "Supported formats"
-description: "See which document types the current desktop release can open and edit."
+description: "See which files are editable Pages, read-only Attachments, or unsupported workspace items."
 ---
 
-## Stable document types
+## Pages
 
 | Format | Open | Edit | Save behavior |
 | --- | --- | --- | --- |
-| `.md`, `.markdown` | Yes | Yes | Updates the Markdown source and sidecar |
-| `.pdf` | Yes | Annotations; existing text when extractable | Saves edits to a sidecar; export creates a new PDF |
-| `.xlsx` | Yes | Yes | Saves edits to a sidecar; export creates a new workbook |
+| `.md`, `.markdown` | Yes | Yes | Updates the portable Markdown source |
 
-## Limited support
+Markdown Pages are the only first-class editable content type. One Markdown file is complete and remains useful in other Markdown tools.
+
+## Attachments
 
 | Format | Current behavior |
 | --- | --- |
-| `.xlsm` | Opens in the workbook editor, but VBA preservation is not guaranteed on export |
+| `.pdf` | Read-only Attachment; Open Externally, Reveal, and eligible legacy recovery export |
+| `.xlsx`, `.xlsm`, `.csv` | Read-only Attachment; Open Externally, Reveal, and eligible legacy recovery export |
+| `.html`, `.htm` | Read-only Attachment; Open Externally and Reveal |
 
-## Not currently supported
+Opening an ordinary Attachment does not create a sidecar or rewrite the source. doXmind does not provide PDF annotation, workbook formulas or formatting, or HTML editing.
 
-- `.docx` and `.pptx` are not supported workspace documents.
-- CSV support is under development and is not part of the stable release. Convert CSV files to `.xlsx` before opening them.
-- Scanned PDFs can be displayed, but doXmind has no OCR for extracting editable text.
+## Other files
 
-## Size limits
+Images can be referenced from a Markdown Page as local assets. DOCX, PPTX, standalone images, and arbitrary other extensions are not promised as workspace documents.
 
-The local file import limit is 10 MiB. Workbook parsing is also limited to 64 worksheets, 5,000 rows per sheet, and 200 columns per sheet.
+The internal `other` Attachment type is only a safe read-only fallback if an unknown format reaches the shared surface. It is not a promise that doXmind scans, lists, or registers every file type.
 
-Split very large inputs before opening them when possible.
+## Legacy artifacts
 
-## Compatibility notes
+Older doXmind releases could create editable state beside PDF and spreadsheet files. Current releases preserve those sidecars only as recovery evidence. They do not resume the old editor or write new Attachment edit state.
 
-- The spreadsheet formula engine is not a complete Excel implementation. Review complex formulas after export.
-- Structural spreadsheet edits may require manual formula updates.
-- Rich Markdown details without a direct portable equivalent depend on the hidden sidecar.
+Recovery is explicit and zero-write: it exports a Markdown report containing exact legacy bytes while leaving the source and its artifacts unchanged. See [PDF Attachments and legacy recovery](/pdf/edit-and-annotate) and [Spreadsheet Attachments and legacy recovery](/spreadsheets/workbooks).

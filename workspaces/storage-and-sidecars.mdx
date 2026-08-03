@@ -1,50 +1,41 @@
 ---
-title: "Local storage and sidecars"
-description: "Understand the hidden files doXmind keeps beside your documents."
+title: "Local storage and legacy sidecars"
+description: "Understand portable Markdown Pages and preserve legacy recovery artifacts."
 ---
 
-Your source files stay in the folders you choose. doXmind stores editor-only state in hidden JSON sidecars beside those files. The source and its current sidecar together are the complete editable document.
+Your source files stay in the folders you choose. A Markdown Page is one complete `.md` or `.markdown` file. Its body, properties, aliases, tags, and links are stored in Markdown or YAML frontmatter; normal Page work does not create a same-name `.doxmind` file.
 
 ```text
 Project/
 ├── Project Plan.md
-├── .Project Plan.doxmind
 ├── Research Report.pdf
-├── .Research Report.pdf.doxmind
 ├── Quarterly Plan.xlsx
-└── .Quarterly Plan.xlsx.doxmind
+└── assets/
+    └── diagram.png
 ```
 
-## What each file contains
+## What doXmind writes
 
-| Document | Portable source | Hidden sidecar |
+| Item | Source of truth | Current write behavior |
 | --- | --- | --- |
-| Markdown | The document text in `.md` or `.markdown` | Lossless rich-editor HTML and doXmind-only block details |
-| PDF | The original `.pdf` | Editable PDF state and annotations |
-| Spreadsheet | The original `.xlsx` | Workbook editing state |
+| Markdown Page | One `.md` or `.markdown` file | Updates only the Markdown source |
+| Ordinary Attachment | The original PDF, spreadsheet, or HTML file | Never rewritten by doXmind |
+| Legacy sidecar | Historical evidence beside a source file | Read only through explicit recovery export |
 
-For Markdown, the filename extension is removed from the sidecar name. For PDF and spreadsheet files, the source extension remains part of the sidecar name.
+## Legacy sidecars
 
-## Keep source and sidecar together
-
-Move, copy, restore, and back up both files. The app does this automatically when you manage documents from the workspace sidebar. If you use Finder or another tool, include the hidden sidecar yourself.
+Older versions could create hidden `.doxmind` sidecars beside Pages, PDFs, or spreadsheets. Those bytes can contain user work, but they are not part of the current Page or Attachment model. Keep the complete artifact family together when it exists.
 
 <Warning>
-  Do not manually edit or delete `.doxmind` sidecars. For PDFs and spreadsheets, removing a sidecar removes saved edits that have not been exported.
+  Do not manually edit, replace, or delete a legacy `.doxmind` sidecar. Current recovery exports a Markdown report with exact legacy bytes; it never recreates the retired editor or rewrites the source file.
 </Warning>
 
-## Other local files
+- A `<sidecar>.lock` file may remain after an older operation; do not delete it manually.
+- A `<sidecar>.bak` file is a historical backup.
+- A `<sidecar>.corrupt-*` file preserves unreadable evidence.
 
-- A `.doxmind` folder inside a workspace can hold local workspace metadata.
-- A `<sidecar>.lock` file coordinates migration. It is small, can remain afterward, and should not be deleted manually.
-- A `<sidecar>.bak` file is a copy of the pre-migration sidecar.
-- A `<sidecar>.corrupt-*` file preserves unreadable data for recovery.
-- App-level settings and metadata live under `~/.doxmind`, separately from document content.
-
-For an everyday backup, preserve the full workspace folder, including hidden files. If a migration error tells you to restore a `.bak`, close doXmind first and follow the exact recovery path shown by the app. Preserve the current sidecar before replacing it, and confirm that the backup belongs to the same source document.
+For an everyday backup, preserve the full workspace folder, including hidden files. If legacy artifacts exist, preserve them with their source and export a recovery report before considering any cleanup.
 
 ## Privacy and network access
 
-doXmind does not upload documents, provide cloud sync, or require an account. Update checks contact the release service. A web bookmark preview directly requests the target page and referenced images from your Mac. Document storage remains local.
-
-Folders stored in iCloud Drive, Dropbox, or another synced location can still be uploaded by that provider according to its settings.
+doXmind does not upload documents, provide cloud sync, or require an account. Folders stored in iCloud Drive, Dropbox, or another synced location can still be uploaded by that provider according to its settings.

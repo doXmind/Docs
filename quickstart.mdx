@@ -19,49 +19,45 @@ description: "Install doXmind and create your first local workspace."
 
 ## 2. Choose how to start
 
-The welcome screen gives you three options:
+The welcome screen lets you open a folder workspace or a single file. For ongoing projects, choose **Open Folder**: doXmind works only inside the folder you select and its subfolders.
 
-- **Open Folder** — use a folder as a workspace and browse its documents in the sidebar.
-- **Open File** — open one Markdown, PDF, or Excel file without creating a workspace.
-- **New Document** — create a new local Markdown file.
+- **Open Folder** — browse Pages, supported Attachments, and subfolders in the sidebar.
+- **Open File** — open one Markdown Page or supported Attachment without creating a workspace.
+- **New Page** — create a new local Markdown file.
 
-For ongoing projects, choose **Open Folder**. doXmind only works inside the folder you select and its subfolders.
+## 3. Create or open a Page
 
-## 3. Create or open a document
-
-In a folder workspace, use the sidebar to create a blank Markdown document, a PDF, a spreadsheet, or a new folder. You can also open existing `.md`, `.markdown`, `.pdf`, and `.xlsx` files.
+In a folder workspace, the **New** menu creates a Page, a folder, or a Page from a template. It does not create PDFs or workbooks. Existing `.md`, `.markdown`, `.pdf`, spreadsheet, and HTML files can appear in the workspace.
 
 ## 4. Save your work
 
-Press `Cmd+S`.
+Press `Cmd+S` to save the current Page to its `.md` or `.markdown` source. Use **Export PDF** on a Page to create a derived PDF at a destination you choose.
 
-- Markdown saves to the source file and a hidden sidecar.
-- PDF and spreadsheet edits save to a hidden sidecar next to the original.
-- To create a new edited PDF or workbook, choose **Export PDF** or **Export XLSX** from the document menu.
+PDF, spreadsheet, and HTML files are read-only Attachments. Use **Open Externally** or **Reveal** for the original file.
 
 <Warning>
-  Keep each hidden `.doxmind` sidecar with its source file when moving, copying, restoring, or backing up a document. PDF and spreadsheet edits live in that sidecar until you export a new file.
+  An existing `.doxmind`, `.bak`, `.lock`, or `.corrupt-*` artifact is legacy recovery evidence. Keep it with its source file; current doXmind never overwrites or deletes it.
 </Warning>
 
 ## Next steps
 
 <CardGroup cols={2}>
   <Card title="Open files and folders" icon="folder-open" href="/workspaces/opening-files">
-    Learn the difference between a workspace and a standalone file.
+    Learn the difference between a workspace, a Page, and an Attachment.
   </Card>
   <Card title="Edit Markdown" icon="file-lines" href="/markdown/editor">
-    Explore the editor, outline, search, and document tools.
+    Explore the source-backed Block editor, outline, search, and document tools.
   </Card>
-  <Card title="Edit a PDF" icon="file-pdf" href="/pdf/edit-and-annotate">
-    Add annotations, edit extracted text, and export a copy.
+  <Card title="PDF Attachments" icon="file-pdf" href="/pdf/edit-and-annotate">
+    Keep PDFs read-only and preserve any legacy recovery evidence.
   </Card>
-  <Card title="Edit a workbook" icon="table" href="/spreadsheets/workbooks">
-    Work with sheets, formulas, formatting, and filters.
+  <Card title="Spreadsheet Attachments" icon="table" href="/spreadsheets/workbooks">
+    Open workbooks externally and preserve legacy recovery evidence.
   </Card>
   <Card title="Check supported formats" icon="file-circle-check" href="/reference/supported-formats">
-    Review current format, size, and compatibility limits.
+    Review current format and compatibility boundaries.
   </Card>
   <Card title="Learn the shortcuts" icon="keyboard" href="/reference/keyboard-shortcuts">
-    Open, save, search, and switch documents faster.
+    Open, save, search, and switch Pages faster.
   </Card>
 </CardGroup>

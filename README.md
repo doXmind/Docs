@@ -1,24 +1,19 @@
-# doXmind Documentation
+# doXmind Docs
 
-Official documentation for [doXmind](https://doxmind.com), a local-first desktop workspace for Markdown, PDF, and spreadsheets.
+Official documentation for [doXmind](https://doxmind.com), a fully local, Markdown-native knowledge workspace.
 
-**Read the documentation:** [docs.doxmind.com](https://docs.doxmind.com)
+The product has one editable content type: a Page backed by one portable `.md` or `.markdown` file. PDF, spreadsheet, and HTML files are read-only Attachments. Existing sidecars are preserved only as legacy recovery evidence.
 
-## Documentation areas
+## Local development
 
-- Getting started and installation
-- Workspaces, files, and local storage
-- Markdown editing and export
-- PDF editing and annotation
-- Spreadsheet editing
-- Shortcuts, supported formats, and troubleshooting
+```sh
+npm install
+npm run dev
+```
 
-## Links
+Validate the documentation before publishing:
 
-- **Website:** [doxmind.com](https://doxmind.com)
-- **Download:** [Latest release](https://github.com/doXmind/releases/releases/latest)
-- **Support:** [support@doxmind.com](mailto:support@doxmind.com)
-
-## License
-
-MIT
+```sh
+npm run validate
+npm run check:links
+```

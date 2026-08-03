@@ -1,0 +1,31 @@
+---
+title: "What's new in 1.10"
+description: "Highlights from the current macOS release."
+---
+
+doXmind 1.10 is a correctness and performance release for the Markdown-native desktop app.
+
+## More faithful Markdown editing
+
+- Multiline frontmatter properties preserve valid YAML.
+- Inline bold, italic, punctuation, and table-cell edits write the intended source bytes.
+- Setext headings, code after lists, equations, table alignment, toggles, and Wiki Links have stronger source-backed behavior.
+
+## Better Block interactions
+
+- Block menu actions return focus to the affected Block.
+- Undo after duplicating a Block restores the expected caret location.
+- Unresolved Wiki Links communicate their state clearly.
+- External-edit conflicts remain visible below the desktop chrome.
+
+## Faster long Pages
+
+Block rendering and collection evaluation avoid repeated whole-document work, improving typing responsiveness in large workspaces.
+
+## Known limitations
+
+- A toggle renders nested lists, tables, and code fences as raw Markdown.
+- Footnotes, reference-style links, definition lists, and some inline math remain exact raw Markdown rather than dedicated Blocks.
+- Setext headings are recognised by the editor but are not yet a full outline-label and embed target surface.
+
+See the [latest GitHub release](https://github.com/doXmind/releases/releases/latest) for the current download.

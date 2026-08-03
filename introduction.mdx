@@ -1,9 +1,9 @@
 ---
 title: "Introduction"
-description: "Meet doXmind, a local-first desktop workspace for Markdown, PDF, and spreadsheets."
+description: "Meet doXmind, a fully local Markdown-native knowledge workspace."
 ---
 
-doXmind is a desktop workspace for writing, reviewing, and organizing documents without moving them into a hosted web app. Open files from your Mac, edit them in a focused interface, and keep the original files in folders you control.
+doXmind is a desktop workspace for writing and organizing Markdown without moving it into a hosted web app. Open a real folder from your Mac, edit portable Pages in a focused interface, and keep the files where you put them.
 
 <Card title="Download for Apple silicon Mac" icon="download" href="https://github.com/doXmind/releases/releases/latest/download/doXmind-mac-arm64.dmg">
   Get the latest public release for Apple silicon.
@@ -11,17 +11,17 @@ doXmind is a desktop workspace for writing, reviewing, and organizing documents 
 
 ## Built around your files
 
-Each document stays in a folder you control. Its portable source and, when present, its hidden sidecar together form the complete editable document. This keeps source files usable in other apps while preserving richer doXmind editor state.
+Each Page stays in a folder you control. One `.md` or `.markdown` file is the complete Page: its body, properties, tags, aliases, and links stay in Markdown or YAML frontmatter. Normal Page editing does not create a same-name `.doxmind` file.
 
 <CardGroup cols={3}>
-  <Card title="Markdown" icon="file-lines" href="/markdown/editor">
-    Write in a rich editor while keeping a portable `.md` file.
+  <Card title="Markdown Pages" icon="file-lines" href="/markdown/editor">
+    Edit source-backed Blocks while keeping one portable Markdown file.
   </Card>
-  <Card title="PDF" icon="file-pdf" href="/pdf/edit-and-annotate">
-    Read, annotate, edit extracted text, and export a new PDF.
+  <Card title="Attachments" icon="paperclip" href="/reference/supported-formats">
+    Keep PDFs, spreadsheets, and HTML files unchanged and open them externally.
   </Card>
-  <Card title="Spreadsheets" icon="table" href="/spreadsheets/workbooks">
-    Work with `.xlsx` sheets, formulas, formatting, filters, and more.
+  <Card title="Local links" icon="link" href="/markdown/rich-blocks">
+    Connect Pages with portable Wiki Links and standard Markdown links.
   </Card>
 </CardGroup>
 
@@ -30,17 +30,15 @@ Each document stays in a folder you control. Its portable source and, when prese
 - No account is required.
 - There is no cloud sync, hosted document storage, or telemetry.
 - doXmind has no built-in AI runtime.
-- Your files stay where you put them unless you move or export them.
-
-<Note>
-  Update checks contact the release service. When you insert a web bookmark, your Mac directly requests the target page and its preview images. Document editing and storage remain local.
-</Note>
+- Your files stay where you put them unless you move or export a derived PDF.
 
 doXmind does not provide cloud sync. If you place a workspace in iCloud Drive, Dropbox, or another synced folder, that provider can still sync the files under its own settings and privacy terms.
 
-## Save and export are different
+## Pages and Attachments are different
 
-Markdown saves back to the `.md` file and its sidecar. For PDFs and spreadsheets, **Save** records the editable state in the sidecar; **Export** creates a new PDF or `.xlsx` file with the edits applied. The original PDF or workbook is not overwritten.
+Saving a Page writes its Markdown source only. PDF, spreadsheet, and HTML files are read-only **Attachments**: doXmind does not mount an editor, save edit state, or rewrite their source bytes. Use **Open Externally** to work in the system application and **Reveal** to locate the file.
+
+Older releases may have left PDF, spreadsheet, or Page sidecars beside a source file. They are legacy recovery evidence, not current editor state. Preserve the complete artifact family and use an explicit recovery export if you need to inspect it.
 
 ## Current availability
 
@@ -48,9 +46,9 @@ The public release currently supports **macOS on Apple silicon**. Windows and Li
 
 <CardGroup cols={2}>
   <Card title="Start in five minutes" icon="arrow-right" href="/quickstart">
-    Install the app, open a folder, and create your first document.
+    Install the app, open a folder, and create your first Page.
   </Card>
   <Card title="Understand local storage" icon="hard-drive" href="/workspaces/storage-and-sidecars">
-    Learn what doXmind writes beside your files and how to back it up.
+    Learn how portable Pages and legacy recovery artifacts are stored.
   </Card>
 </CardGroup>
