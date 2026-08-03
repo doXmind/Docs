@@ -1,29 +1,28 @@
-# doXmind Documentation — product facts
+# doXmind documentation — product facts
 
-doXmind is a local-first desktop workspace for writing, reviewing, and organizing Markdown, PDF, and spreadsheet documents. The current public release supports macOS on Apple silicon. No account or sign-in is required.
+doXmind is a fully local, Markdown-native knowledge workspace. The current public release supports macOS on Apple silicon. No account or sign-in is required.
 
-## Local storage
+## Pages
 
-Documents stay in folders selected by the user. A portable source file and its hidden `.doxmind` sidecar together form the complete editable document. doXmind does not upload documents or provide cloud sync. Workspaces placed in iCloud Drive, Dropbox, or another synced folder can still be uploaded by that provider.
+Markdown Pages are the only first-class editable content type. One `.md` or `.markdown` file is a complete Page: body, properties, tags, aliases, and links live in Markdown or YAML frontmatter. Markdown source is the editor state; normal Page editing does not create or require a same-name `.doxmind` file.
 
-Update checks contact the release service. Inserting a web bookmark directly requests the target page and referenced images from the user's Mac.
+Supported Blocks include headings, lists, tasks, quotes, tables, code, math, Mermaid, callouts, portable `<details>` toggles, local images, and Wiki Links. Unsupported syntax remains editable as exact raw Markdown.
 
-## Save and export
+Saving updates the source file. Export PDF creates a local derived PDF chosen in a native save dialog; the PDF is not editable Page or Attachment state.
 
-- Markdown Save updates the `.md` or `.markdown` source and its sidecar.
-- PDF Save records editable text, free text, and annotations in a hidden sidecar. Export PDF creates a new edited PDF; the original is unchanged.
-- Spreadsheet Save records the editable workbook state in a hidden sidecar. Export XLSX creates a new edited workbook; the original is unchanged.
+## Attachments and legacy recovery
 
-Keep each source and its sidecar together when moving, restoring, or backing up a document.
+PDF, spreadsheet (`.xlsx`, `.xlsm`, `.csv`), and HTML files are read-only Attachments. Ordinary Attachments offer Open Externally and Reveal. Current releases do not create blank PDFs or workbooks, write new Attachment edit state, rewrite Attachment sources, annotate PDFs, or edit workbook cells, formulas, or formatting.
 
-## Supported formats
+Older releases may have written Page, PDF, or spreadsheet sidecars. Preserve the source, main sidecar, `.bak`, `.lock`, and `.corrupt-*` artifacts together. Explicit recovery exports a Markdown report containing exact legacy bytes; it never recreates a retired editor or changes the evidence.
 
-- Stable: `.md`, `.markdown`, `.pdf`, `.xlsx`.
-- Limited: `.xlsm`; VBA macro preservation is not guaranteed on export.
-- Not supported: `.docx`, `.pptx`, and stable CSV editing.
-- Scanned PDFs can be displayed, but doXmind has no OCR for editing image-only text.
+## Product boundary
 
-The local file import limit is 10 MiB. Workbook parsing is limited to 64 worksheets, 5,000 rows per sheet, and 200 columns per sheet.
+doXmind has no cloud sync, hosted document storage, accounts, telemetry, billing, collaboration, or built-in AI runtime. The user's filesystem is the source of truth. iCloud Drive, Dropbox, or another configured sync provider can still sync files under that provider's own settings.
+
+## Current release
+
+Version 1.10 improves Markdown correctness, Block interactions, Wiki Link resolution, and long-Page responsiveness. Known limitations include raw Markdown rendering for nested structures in toggles, footnotes, reference-style links, definition lists, and some inline math.
 
 ## Complete page index
 

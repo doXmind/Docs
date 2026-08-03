@@ -1,40 +1,32 @@
 ---
 title: "Rich blocks"
-description: "Use doXmind's extended Markdown blocks for structured documents."
+description: "Use source-backed Blocks and portable Markdown syntax."
 ---
 
-Open the block menu with `/` to insert content beyond basic paragraphs and lists.
+Open the Block menu with `/` to insert common Markdown structures. Each supported Block writes visible source rather than a hidden editor record.
 
-## Available blocks
+## Available Blocks
 
 ### Callouts and toggles
 
-Use callouts to emphasize notes, tips, warnings, and important context. Toggles keep supporting detail collapsed until a reader needs it.
+Use callouts to emphasize notes, tips, warnings, and important context. Toggles use portable `<details>` and `<summary>` source with Markdown content.
 
-### Math
+### Math and diagrams
 
-Add inline and display math using KaTeX syntax. Math remains represented in the Markdown source.
+Add inline or display math with KaTeX syntax. Mermaid diagrams are stored in fenced `mermaid` code blocks, so their source remains portable.
 
-### Mermaid diagrams
+### Code and tables
 
-Insert a Mermaid block to render flowcharts and other diagrams from text. The source is stored in a fenced Mermaid code block, so it remains portable.
+Use fenced code blocks with an optional language. Tables preserve the Markdown delimiter row, including column alignment.
 
-### Code blocks
+### Images and links
 
-Add fenced code blocks with a language for syntax highlighting.
+Images use relative Markdown references to workspace assets. Link Pages with `[[Wiki Links]]`, standard Markdown links, or visible `^block-id` anchors for unique block embeds.
 
-### Images and web bookmarks
+### Raw Markdown
 
-Images can reference local workspace assets. Web bookmarks create a visual link preview; fetching that preview requires an internet connection.
-
-### Columns and table of contents
-
-Columns support side-by-side layouts. A table-of-contents block follows the headings in the current document.
-
-### Page links
-
-Link to another Markdown document in the same workspace to connect related notes and plans.
+Some syntax is not rendered as a dedicated Block yet, including footnotes, reference-style links, definition lists, and some inline math. It stays editable as exact raw Markdown.
 
 <Note>
-  Rich layout and editor-only details are stored in the hidden `.doxmind` sidecar. Keep that sidecar with the Markdown file to preserve the complete editing experience.
+  A Page's complete editable state is its Markdown source. There is no current rich-layout sidecar to keep beside the file.
 </Note>
